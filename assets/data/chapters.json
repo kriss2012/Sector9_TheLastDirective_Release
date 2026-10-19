@@ -1,0 +1,113 @@
+{
+  "0": {
+    "chapter_id": 0,
+    "title": "Prologue: The Ship That Heard Tomorrow",
+    "location": "Aegis-9 Command Bridge",
+    "deck": "DECK 01 · COMMAND BRIDGE",
+    "theme": "bridge",
+    "main_objective": "Investigate impossible signal and reach engineering lift.",
+    "objectives": [
+      {"id": "inspect_console", "text": "Inspect damaged communications console", "completed": false, "required": true},
+      {"id": "get_access_card", "text": "Retrieve Emergency Access Card from fallen officer", "completed": false, "required": true},
+      {"id": "read_hale_chip", "text": "Read Technician Hale's Data Chip", "completed": false, "required": false},
+      {"id": "unlock_bridge_door", "text": "Unlock Bridge Security Bulkhead", "completed": false, "required": true},
+      {"id": "take_lift", "text": "Enter Engineering Lift to Deck 04", "completed": false, "required": true}
+    ]
+  },
+  "1": {
+    "chapter_id": 1,
+    "title": "Chapter 1: Systems Offline",
+    "location": "Aegis-9 Engineering Deck",
+    "deck": "DECK 04 · ENGINEERING & LIFE SUPPORT",
+    "theme": "engineering",
+    "main_objective": "Restore ship stability and life-support.",
+    "objectives": [
+      {"id": "find_tool", "text": "Locate Maintenance Tool in Workshop storage", "completed": false, "required": true},
+      {"id": "solve_power_grid", "text": "Route emergency power grid (Battery -> Regulator -> Pressure)", "completed": false, "required": true},
+      {"id": "stabilize_regulator", "text": "Calibrate backup power grid regulator", "completed": false, "required": true},
+      {"id": "listen_ward_1", "text": "Play Captain Ward's recorded message", "completed": false, "required": true},
+      {"id": "malik_promise", "text": "[Optional] Recover Malik's personal engineering log", "completed": false, "required": false},
+      {"id": "reach_deck_02", "text": "Proceed to Crew Habitation Deck", "completed": false, "required": true}
+    ]
+  },
+  "2": {
+    "chapter_id": 2,
+    "title": "Chapter 2: Dead Echoes",
+    "location": "Crew Quarters & Medical Bay",
+    "deck": "DECK 02 · HABITATION & MEDICAL WING",
+    "theme": "crew_medical",
+    "main_objective": "Investigate missing crew and recover Science Director's badge.",
+    "objectives": [
+      {"id": "inspect_medical", "text": "Examine Medical Bay admission records", "completed": false, "required": true},
+      {"id": "unlock_locker", "text": "Unlock Science Director Harrison's locker (Code: 505)", "completed": false, "required": true},
+      {"id": "listen_sera_1", "text": "Listen to Dr. Sera Nahl's erased futures recording", "completed": false, "required": true},
+      {"id": "evade_drone", "text": "Evade or distract the Watcher security drone", "completed": false, "required": true},
+      {"id": "use_science_badge", "text": "Use Science Badge to unlock Central Security door", "completed": false, "required": true},
+      {"id": "unsent_messages", "text": "[Optional] Find all 3 unsent messages from Technician Hale", "completed": false, "required": false}
+    ]
+  },
+  "3": {
+    "chapter_id": 3,
+    "title": "Chapter 3: Containment Breach",
+    "location": "Restricted Laboratory & Sector 9 Containment",
+    "deck": "DECK 06 · RESTRICTED XENOTECH LAB",
+    "theme": "lab",
+    "main_objective": "Halt toxic radiation leak from the S9-ORIGIN core.",
+    "objectives": [
+      {"id": "find_filter_parts", "text": "Gather 2 filter components in the workshop", "completed": false, "required": true},
+      {"id": "fabricate_filter", "text": "Assemble Hazard-Filter upgrade at fabrication station", "completed": false, "required": true},
+      {"id": "solve_valves", "text": "Isolate biohazard valves in sequence (Helix -> Circle -> Flame)", "completed": false, "required": true},
+      {"id": "listen_ward_sera_2", "text": "Access Ward & Sera's discussion on erased star systems", "completed": false, "required": true},
+      {"id": "veyr_frag_1", "text": "[Optional] Recover Veyr Memory Fragment 1", "completed": false, "required": false},
+      {"id": "proceed_vault", "text": "Enter Core Vault security checkpoint", "completed": false, "required": true}
+    ]
+  },
+  "4": {
+    "chapter_id": 4,
+    "title": "Chapter 4: The Core Vault",
+    "location": "Aegis-9 Core Vault",
+    "deck": "DECK 09 · SECTOR 9 CORE VAULT",
+    "theme": "vault",
+    "main_objective": "Reprogram defense matrix and recover the Master Override Cipher.",
+    "objectives": [
+      {"id": "find_cipher_frags", "text": "Collect 3 master cipher fragments from terminals", "completed": false, "required": true},
+      {"id": "reprogram_matrix", "text": "Reprogram Defense Matrix (Identity, Command, Target layers)", "completed": false, "required": true},
+      {"id": "listen_ward_secret", "text": "Decrypt Captain Ward's classified confession", "completed": false, "required": true},
+      {"id": "veyr_frag_2", "text": "[Optional] Recover Veyr Memory Fragment 2", "completed": false, "required": false},
+      {"id": "ghost_relays", "text": "[Optional] Disable corrupted security relays", "completed": false, "required": false},
+      {"id": "proceed_comms", "text": "Take emergency lift to Communications Deck", "completed": false, "required": true}
+    ]
+  },
+  "5": {
+    "chapter_id": 5,
+    "title": "Chapter 5: Whispers in the Dark",
+    "location": "Observation Dome & Communications Deck",
+    "deck": "DECK 03 · OBSERVATION DOME & COMMS",
+    "theme": "comms",
+    "main_objective": "Manually align transceivers and broadcast distress signal.",
+    "objectives": [
+      {"id": "view_void", "text": "Observe the vanished star void from the dome window", "completed": false, "required": true},
+      {"id": "gather_alignment_codes", "text": "Retrieve 3 dish alignment coordinates from logs", "completed": false, "required": true},
+      {"id": "align_dishes", "text": "Align all 3 transceiver dishes (Alpha, Beta, Gamma)", "completed": false, "required": true},
+      {"id": "hear_future_aegis", "text": "Receive distress call from future Aegis-9", "completed": false, "required": true},
+      {"id": "watcher_debate", "text": "Confront The Watcher over shipboard comms", "completed": false, "required": true},
+      {"id": "sera_hologram_quest", "text": "[Optional] Synchronize quantum harmonics to speak with Dr. Sera Nahl", "completed": false, "required": false},
+      {"id": "veyr_frag_3", "text": "[Optional] Recover Veyr Memory Fragment 3", "completed": false, "required": false},
+      {"id": "enter_engine_lift", "text": "Enter central lift to the Continuum Engine Chamber", "completed": false, "required": true}
+    ]
+  },
+  "6": {
+    "chapter_id": 6,
+    "title": "Chapter 6: Final Directive",
+    "location": "The Continuum Engine Chamber",
+    "deck": "SECTOR 09 · CONTINUUM ENGINE CHAMBER",
+    "theme": "alien_engine",
+    "main_objective": "Reach the Continuum Engine and choose the fate of reality.",
+    "objectives": [
+      {"id": "cross_anomaly", "text": "Traverse the spacetime anomaly corridor", "completed": false, "required": true},
+      {"id": "examine_projections", "text": "Examine the 3 holographic memory projections", "completed": false, "required": true},
+      {"id": "confront_watcher_core", "text": "Hold the final dialogue with The Watcher", "completed": false, "required": true},
+      {"id": "select_final_directive", "text": "Execute the Prime Directive (Ending A, B, C, or Secret)", "completed": false, "required": true}
+    ]
+  }
+}
