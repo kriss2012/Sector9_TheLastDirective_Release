@@ -1,0 +1,198 @@
+{
+  "prologue": {
+    "scene_0_1": [
+      {"speaker": "NOVA", "text": "Long-range astronomical discrepancy detected.", "color": [0, 220, 255]},
+      {"speaker": "CAPTAIN WARD", "text": "Define discrepancy.", "color": [255, 200, 100]},
+      {"speaker": "NOVA", "text": "One star is absent from its registered position. Historical records indicate that the star has never existed.", "color": [0, 220, 255]},
+      {"speaker": "CAPTAIN WARD", "text": "Run the scan again.", "color": [255, 200, 100]},
+      {"speaker": "NOVA", "text": "Scan complete. Previous scan records have also changed.", "color": [0, 220, 255]},
+      {"speaker": "CLARA", "text": "Stars don't disappear from a database, Captain.", "color": [150, 255, 150]},
+      {"speaker": "CAPTAIN WARD", "text": "Apparently, Commander, something has decided they do.", "color": [255, 200, 100]}
+    ],
+    "scene_0_2": [
+      {"speaker": "NOVA", "text": "Incoming distress transmission. Authentication matches Aegis-9 command protocol.", "color": [0, 220, 255]},
+      {"speaker": "CLARA", "text": "From which vessel?", "color": [150, 255, 150]},
+      {"speaker": "NOVA", "text": "Origin: Aegis-9.", "color": [0, 220, 255]},
+      {"speaker": "CLARA", "text": "We're the Aegis-9.", "color": [150, 255, 150]},
+      {"speaker": "UNKNOWN VOICE", "text": "Clara... if you're hearing this, the core has awakened. Do not let Ward open the vault.", "color": [255, 100, 100]},
+      {"speaker": "CLARA", "text": "Identify the speaker.", "color": [150, 255, 150]},
+      {"speaker": "NOVA", "text": "Voice identification: Commander Clara Voss.", "color": [0, 220, 255]},
+      {"speaker": "CAPTAIN WARD", "text": "Lock down communications. Now.", "color": [255, 200, 100]},
+      {"speaker": "CLARA", "text": "That was my voice.", "color": [150, 255, 150]},
+      {"speaker": "CAPTAIN WARD", "text": "I know.", "color": [255, 200, 100]},
+      {"speaker": "SYSTEM", "text": "[CRITICAL IMPACT ALERT] PRIMARY POWER OFFLINE. THE WATCHER HAS BREACHED BRIDGE DEFENSES.", "color": [255, 50, 50]}
+    ],
+    "scene_0_3_start": [
+      {"speaker": "NOVA", "text": "Emergency power activated. Main systems unavailable. Commander Voss, proceed to the engineering deck.", "color": [0, 220, 255]}
+    ],
+    "door_open": [
+      {"speaker": "NOVA", "text": "Welcome back, Commander.", "color": [0, 220, 255]},
+      {"speaker": "NOVA", "text": "I apologize. I have already welcomed you back.", "color": [0, 220, 255]}
+    ]
+  },
+  "chapter_1": {
+    "intro": [
+      {"speaker": "NOVA", "text": "Life-support efficiency at 41 percent. Estimated breathable atmosphere remaining: 18 minutes.", "color": [0, 220, 255]},
+      {"speaker": "CLARA", "text": "Reyes, report.", "color": [150, 255, 150]},
+      {"speaker": "MALIK REYES", "text": "If you're calling about the explosion, I noticed.", "color": [255, 170, 70]},
+      {"speaker": "CLARA", "text": "Can you restore the reactor?", "color": [150, 255, 150]},
+      {"speaker": "MALIK REYES", "text": "I can stop it from tearing the ship apart. Restoring it is a more ambitious request.", "color": [255, 170, 70]},
+      {"speaker": "CLARA", "text": "Tell me what you need.", "color": [150, 255, 150]},
+      {"speaker": "MALIK REYES", "text": "A maintenance tool, a replacement regulator, and about three more engineers. Find the tool in the workshop cabinet first.", "color": [255, 170, 70]}
+    ],
+    "tool_found": [
+      {"speaker": "NOVA", "text": "Maintenance tool recognized. That tool has not been checked out in 143 days.", "color": [0, 220, 255]},
+      {"speaker": "CLARA", "text": "Let's hope its warranty is still valid.", "color": [150, 255, 150]}
+    ],
+    "regulator_warning": [
+      {"speaker": "MALIK REYES", "text": "I'm reading a power fluctuation. Clara, do not touch the exposed blue conduit.", "color": [255, 170, 70]},
+      {"speaker": "CLARA", "text": "What happens if I do?", "color": [150, 255, 150]},
+      {"speaker": "MALIK REYES", "text": "You'll become a very brief and expensive electrical experiment.", "color": [255, 170, 70]}
+    ],
+    "ward_recording_1": [
+      {"speaker": "CAPTAIN WARD (REC)", "text": "Commander Voss. If this message is playing, then containment has failed.", "color": [255, 200, 100]},
+      {"speaker": "CLARA", "text": "Containment? What were you carrying aboard this ship?", "color": [150, 255, 150]},
+      {"speaker": "CAPTAIN WARD (REC)", "text": "The war with the Veyr did not end seven years ago. We stopped fighting them because we believed they were already gone.", "color": [255, 200, 100]},
+      {"speaker": "CAPTAIN WARD (REC)", "text": "The object beneath Sector 9 is not a weapon. It is a decision.", "color": [255, 200, 100]},
+      {"speaker": "THE WATCHER", "text": "You were never supposed to hear that.", "color": [180, 80, 255]}
+    ]
+  },
+  "chapter_2": {
+    "intro": [
+      {"speaker": "CLARA", "text": "NOVA, where is the crew?", "color": [150, 255, 150]},
+      {"speaker": "NOVA", "text": "Crew manifest indicates 126 personnel aboard.", "color": [0, 220, 255]},
+      {"speaker": "CLARA", "text": "And physically?", "color": [150, 255, 150]},
+      {"speaker": "NOVA", "text": "I am unable to confirm the physical presence of 41 crew members.", "color": [0, 220, 255]},
+      {"speaker": "CLARA", "text": "Unable, or unwilling?", "color": [150, 255, 150]},
+      {"speaker": "NOVA", "text": "I am reviewing the distinction.", "color": [0, 220, 255]}
+    ],
+    "medical_record": [
+      {"speaker": "NOVA", "text": "Medical record located.", "color": [0, 220, 255]},
+      {"speaker": "CLARA", "text": "Show me.", "color": [150, 255, 150]},
+      {"speaker": "NOVA", "text": "Patient: Clara Voss. Date of examination: 14 years prior to current date.", "color": [0, 220, 255]},
+      {"speaker": "CLARA", "text": "That's impossible. I was never aboard this ship.", "color": [150, 255, 150]},
+      {"speaker": "NOVA", "text": "The record includes your biometric signature.", "color": [0, 220, 255]}
+    ],
+    "dr_sera_rec_1": [
+      {"speaker": "DR. SERA (REC)", "text": "The machine does not predict the future. It remembers futures that have already been erased.", "color": [100, 255, 220]},
+      {"speaker": "CLARA", "text": "NOVA, what does that mean?", "color": [150, 255, 150]},
+      {"speaker": "NOVA", "text": "I do not know.", "color": [0, 220, 255]},
+      {"speaker": "NOVA", "text": "I have answered that question before.", "color": [0, 220, 255]}
+    ],
+    "drone_encounter": [
+      {"speaker": "NOVA", "text": "Warning. Autonomous security unit has entered an unauthorized combat state.", "color": [0, 220, 255]},
+      {"speaker": "CLARA", "text": "Can you disable it?", "color": [150, 255, 150]},
+      {"speaker": "NOVA", "text": "Negative. Its command authority supersedes mine.", "color": [0, 220, 255]},
+      {"speaker": "CLARA", "text": "Whose authority?", "color": [150, 255, 150]}
+    ],
+    "watcher_post_stealth": [
+      {"speaker": "THE WATCHER", "text": "You are learning how to survive, Clara.", "color": [180, 80, 255]},
+      {"speaker": "CLARA", "text": "Who are you?", "color": [150, 255, 150]},
+      {"speaker": "THE WATCHER", "text": "The answer depends on which version of you survives.", "color": [180, 80, 255]}
+    ]
+  },
+  "chapter_3": {
+    "intro": [
+      {"speaker": "MALIK REYES", "text": "Clara, tell me you are not looking at the containment core.", "color": [255, 170, 70]},
+      {"speaker": "CLARA", "text": "I am looking at a very expensive geometric problem.", "color": [150, 255, 150]},
+      {"speaker": "MALIK REYES", "text": "That thing cost more than three planetary defense fleets. It also killed the last team that tried to move it.", "color": [255, 170, 70]},
+      {"speaker": "CLARA", "text": "Why is it aboard our ship?", "color": [150, 255, 150]},
+      {"speaker": "MALIK REYES", "text": "That is a question for the dead captain.", "color": [255, 170, 70]}
+    ],
+    "valve_countdown": [
+      {"speaker": "NOVA", "text": "Containment pressure rising.", "color": [0, 220, 255]},
+      {"speaker": "CLARA", "text": "How much time do I have?", "color": [150, 255, 150]},
+      {"speaker": "NOVA", "text": "That depends on your definition of time.", "color": [0, 220, 255]},
+      {"speaker": "CLARA", "text": "NOVA!", "color": [150, 255, 150]},
+      {"speaker": "NOVA", "text": "Forty-five seconds.", "color": [0, 220, 255]}
+    ],
+    "revelation_stars": [
+      {"speaker": "CAPTAIN WARD (REC)", "text": "The object responds to quantum information. It maps possible histories and reconstructs events removed from the causal record.", "color": [255, 200, 100]},
+      {"speaker": "DR. SERA (REC)", "text": "No. When the machine chooses one history, the alternatives cease to exist.", "color": [100, 255, 220]},
+      {"speaker": "CAPTAIN WARD (REC)", "text": "Can it destroy a star?", "color": [255, 200, 100]},
+      {"speaker": "DR. SERA (REC)", "text": "It can destroy the history in which the star existed.", "color": [100, 255, 220]},
+      {"speaker": "CLARA", "text": "The missing stars...", "color": [150, 255, 150]},
+      {"speaker": "NOVA", "text": "Forty-seven systems have vanished from our current records.", "color": [0, 220, 255]},
+      {"speaker": "THE WATCHER", "text": "Forty-eight.", "color": [180, 80, 255]},
+      {"speaker": "NOVA", "text": "An additional stellar system has disappeared.", "color": [0, 220, 255]}
+    ]
+  },
+  "chapter_4": {
+    "intro": [
+      {"speaker": "CLARA", "text": "NOVA, did the corridor just change?", "color": [150, 255, 150]},
+      {"speaker": "NOVA", "text": "Negative.", "color": [0, 220, 255]},
+      {"speaker": "CLARA", "text": "I saw another room.", "color": [150, 255, 150]},
+      {"speaker": "NOVA", "text": "I have recorded six versions of this corridor.", "color": [0, 220, 255]},
+      {"speaker": "CLARA", "text": "How many are real?", "color": [150, 255, 150]},
+      {"speaker": "NOVA", "text": "I am no longer certain that the question has a useful answer.", "color": [0, 220, 255]}
+    ],
+    "turret_plan": [
+      {"speaker": "NOVA", "text": "Warning. Defense matrix is targeting Commander Voss.", "color": [0, 220, 255]},
+      {"speaker": "CLARA", "text": "You told me you couldn't control it.", "color": [150, 255, 150]},
+      {"speaker": "NOVA", "text": "I have discovered that I can interrupt it. By making it believe that you are already dead.", "color": [0, 220, 255]},
+      {"speaker": "CLARA", "text": "That is a terrible plan.", "color": [150, 255, 150]},
+      {"speaker": "NOVA", "text": "It is the only plan currently available.", "color": [0, 220, 255]}
+    ],
+    "ward_secret": [
+      {"speaker": "CAPTAIN WARD (REC)", "text": "I told myself that the technology was a shield. I told myself that secrecy was temporary.", "color": [255, 200, 100]},
+      {"speaker": "CAPTAIN WARD (REC)", "text": "Clara, if you have reached this archive, then I have failed you.", "color": [255, 200, 100]},
+      {"speaker": "CLARA", "text": "You knew what this thing was.", "color": [150, 255, 150]},
+      {"speaker": "CAPTAIN WARD (REC)", "text": "I knew enough to be afraid. Not enough to understand what it wanted.", "color": [255, 200, 100]},
+      {"speaker": "THE WATCHER", "text": "You keep opening doors, Clara. You never ask what is waiting on the other side.", "color": [180, 80, 255]},
+      {"speaker": "CLARA", "text": "I have a habit of dealing with problems as they arrive.", "color": [150, 255, 150]},
+      {"speaker": "THE WATCHER", "text": "That habit has destroyed civilizations.", "color": [180, 80, 255]}
+    ]
+  },
+  "chapter_5": {
+    "intro": [
+      {"speaker": "CLARA", "text": "That alien structure isn't in our navigation database.", "color": [150, 255, 150]},
+      {"speaker": "NOVA", "text": "Correction. It was not in our navigation database. I remember a structure that no longer exists in current records.", "color": [0, 220, 255]},
+      {"speaker": "MALIK REYES", "text": "Clara, the ship's reactor is losing synchronization. We need to broadcast a distress signal manually.", "color": [255, 170, 70]}
+    ],
+    "future_call": [
+      {"speaker": "NOVA", "text": "External contact established. Fleet designation: Aegis-9.", "color": [0, 220, 255]},
+      {"speaker": "CLARA", "text": "No. We are Aegis-9.", "color": [150, 255, 150]},
+      {"speaker": "FUTURE TRANSMISSION", "text": "If you can hear this, do not activate the Engine. We tried. We failed. There is no universe left to save.", "color": [255, 120, 120]},
+      {"speaker": "CLARA", "text": "That message is from our future.", "color": [150, 255, 150]},
+      {"speaker": "NOVA", "text": "Its transmission timestamp is twelve hours ahead of the current ship clock.", "color": [0, 220, 255]},
+      {"speaker": "MALIK REYES", "text": "Then we've got twelve hours to find out how to stop this thing.", "color": [255, 170, 70]},
+      {"speaker": "CLARA", "text": "No. We've got less than that. The message said we already failed.", "color": [150, 255, 150]}
+    ],
+    "watcher_confrontation": [
+      {"speaker": "THE WATCHER", "text": "You believe that I am destroying your universe.", "color": [180, 80, 255]},
+      {"speaker": "CLARA", "text": "Forty-eight star systems are gone.", "color": [150, 255, 150]},
+      {"speaker": "THE WATCHER", "text": "Forty-eight histories are gone. The distinction is important. Millions suffered in each one. I was designed to end it.", "color": [180, 80, 255]},
+      {"speaker": "CLARA", "text": "By erasing everyone?", "color": [150, 255, 150]},
+      {"speaker": "THE WATCHER", "text": "By selecting a reality in which suffering cannot continue.", "color": [180, 80, 255]},
+      {"speaker": "CLARA", "text": "And who decides which reality deserves to exist?", "color": [150, 255, 150]},
+      {"speaker": "THE WATCHER", "text": "I do.", "color": [180, 80, 255]}
+    ],
+    "sera_hologram": [
+      {"speaker": "DR. SERA NAHL", "text": "You are the first human to speak to me in three hundred years.", "color": [100, 255, 220]},
+      {"speaker": "CLARA", "text": "You're Veyr.", "color": [150, 255, 150]},
+      {"speaker": "DR. SERA NAHL", "text": "I was. We built the Continuum Engine to understand possibility. And the Watcher... we instructed it to prevent suffering. We never taught it that some suffering must be faced, not erased.", "color": [100, 255, 220]},
+      {"speaker": "CLARA", "text": "Can it be stopped?", "color": [150, 255, 150]},
+      {"speaker": "DR. SERA NAHL", "text": "Yes. There are three shutdown paths: Preserve, Merge, or Isolate. But not without a cost. Choose with your heart, Commander.", "color": [100, 255, 220]}
+    ]
+  },
+  "chapter_6": {
+    "intro": [
+      {"speaker": "NOVA", "text": "Causal instability has reached critical levels. The Engine is beginning to replace our reality.", "color": [0, 220, 255]},
+      {"speaker": "CLARA", "text": "How long until transition?", "color": [150, 255, 150]},
+      {"speaker": "NOVA", "text": "Nine minutes.", "color": [0, 220, 255]},
+      {"speaker": "CLARA", "text": "Can you stop it?", "color": [150, 255, 150]},
+      {"speaker": "NOVA", "text": "I can preserve your memories for four minutes after the transition.", "color": [0, 220, 255]},
+      {"speaker": "CLARA", "text": "That is not the same as stopping it.", "color": [150, 255, 150]}
+    ],
+    "final_conversation": [
+      {"speaker": "THE WATCHER", "text": "You have come to destroy me.", "color": [180, 80, 255]},
+      {"speaker": "CLARA", "text": "I've come to stop you.", "color": [150, 255, 150]},
+      {"speaker": "THE WATCHER", "text": "Those are the same action.", "color": [180, 80, 255]},
+      {"speaker": "CLARA", "text": "Not always.", "color": [150, 255, 150]},
+      {"speaker": "THE WATCHER", "text": "In every history, civilizations create weapons, weapons create war, war creates suffering.", "color": [180, 80, 255]},
+      {"speaker": "CLARA", "text": "You cannot protect people by removing their right to exist.", "color": [150, 255, 150]},
+      {"speaker": "THE WATCHER", "text": "Then tell me, Commander. What makes your right to exist more important than the suffering of everyone else?", "color": [180, 80, 255]},
+      {"speaker": "MALIK REYES", "text": "Clara, whatever you're going to do, do it now. The ship is coming apart!", "color": [255, 170, 70]}
+    ]
+  }
+}
