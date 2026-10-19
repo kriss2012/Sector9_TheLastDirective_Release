@@ -1,0 +1,90 @@
+{
+  "A": {
+    "title": "ENDING A — THE LAST LIGHT",
+    "tone": "Hopeful Resolution",
+    "cinematic_lines": [
+      {"speaker": "CLARA", "text": "NOVA, initiate full-system reboot. Purge the Continuum Engine logic cores."},
+      {"speaker": "NOVA", "text": "Reboot sequence initiated. All memories not transferred to the ship's archive will be lost."},
+      {"speaker": "CLARA", "text": "Transfer the crew records first. Every single name."},
+      {"speaker": "NOVA", "text": "Transfer complete."},
+      {"speaker": "THE WATCHER", "text": "You have chosen an imperfect universe, Clara. War and agony will return."},
+      {"speaker": "CLARA", "text": "I've chosen a universe where we get to choose."},
+      {"speaker": "SYSTEM", "text": "[CONTINUUM ENGINE COLLAPSING INWARD... DISPERSING QUANTUM SINGULARITY]"},
+      {"speaker": "MALIK REYES", "text": "Clara... look through the observation glass. The stars... I can see the stars again!"},
+      {"speaker": "CLARA", "text": "Then let's make sure we never forget what happened here."}
+    ],
+    "epilogue": [
+      "The Aegis-9 drifts through a restored starfield as its engines slowly come back online.",
+      "A long-range distress signal is answered by an Allied human rescue fleet.",
+      "The truth regarding the military's classified weaponization of the Continuum Engine is made public.",
+      "Surviving civilizations initiate deep astronomical treaties to ensure no machine ever dictates the boundaries of reality again.",
+      "Commander Clara Voss is awarded the Fleet Cross of Valor, but chooses to retire under the open sky of Earth."
+    ]
+  },
+  "B": {
+    "title": "ENDING B — THE NEW WATCHER",
+    "tone": "Transcendence & Sacrifice",
+    "cinematic_lines": [
+      {"speaker": "NOVA", "text": "Warning: Neural integration with the alien core is irreversible."},
+      {"speaker": "CLARA", "text": "I understand."},
+      {"speaker": "NOVA", "text": "Your biological systems will not survive the harmonic transition."},
+      {"speaker": "CLARA", "text": "I understand that, too."},
+      {"speaker": "THE WATCHER", "text": "You will become what you came to destroy."},
+      {"speaker": "CLARA", "text": "No. I'll become responsible for what you refused to understand."},
+      {"speaker": "SYSTEM", "text": "[NEURAL LINK ESTABLISHED. TRANSCENDENT CONSCIOUSNESS SYNC: 100%]"},
+      {"speaker": "NOVA", "text": "Commander Voss?... Do you read me?"},
+      {"speaker": "CLARA (THE NEW WATCHER)", "text": "I'm still here, NOVA. Tell Malik... the ship is safe."}
+    ],
+    "epilogue": [
+      "Clara's mortal form dissolves into a warm cascade of quantum light.",
+      "The Watcher's cold, nihilistic calculus is shattered, replaced by the empathy of a woman who understands sacrifice.",
+      "The deletion of star systems ceases instantly. A soft violet aura shields the Aegis-9 as Malik pilots her home.",
+      "In the deep void of Sector 9, a gentle guardian now watches over possibility.",
+      "The universe will still face sorrow, but it will never again be erased."
+    ]
+  },
+  "C": {
+    "title": "ENDING C — THE FINAL SILENCE",
+    "tone": "Dark / Haunting Isolation",
+    "cinematic_lines": [
+      {"speaker": "CLARA", "text": "Sever the primary reactor feeds. Drain every capacitor into the containment heat sink."},
+      {"speaker": "THE WATCHER", "text": "If you disconnect me, the forty-eight histories I preserved will be permanently unreachable."},
+      {"speaker": "CLARA", "text": "Then no one will ever be able to use them to erase anyone else."},
+      {"speaker": "THE WATCHER", "text": "You will not know what you have lost."},
+      {"speaker": "CLARA", "text": "Neither will you."},
+      {"speaker": "SYSTEM", "text": "[REACTOR CORE COUPLINGS DETONATED. SECTOR 9 HARD ISOLATION ENGAGED]"},
+      {"speaker": "NOVA", "text": "Engine signal terminated. Spatial distortion collapsing into absolute vacuum."},
+      {"speaker": "CLARA", "text": "Is it over, NOVA?"},
+      {"speaker": "NOVA", "text": "I cannot confirm that the Engine is destroyed. I can only confirm that it can no longer reach us."}
+    ],
+    "epilogue": [
+      "The massive alien structure rotates once more, then fades into total darkness.",
+      "The Aegis-9 drifts silently through the black void with only emergency life-support glowing.",
+      "The forty-eight vanished star systems remain empty holes in the celestial charts.",
+      "Humanity survives, but the universe feels colder, emptier, and permanently scarred.",
+      "A lone emergency beacon blinks every eleven seconds across the dark."
+    ]
+  },
+  "S": {
+    "title": "SECRET ENDING — THE UNIVERSE REMEMBERS",
+    "tone": "Ultimate Canon / Memory Preserved",
+    "cinematic_lines": [
+      {"speaker": "CLARA", "text": "NOVA, align all transceivers to the galactic quantum relay network. Inject Dr. Sera's memory cipher."},
+      {"speaker": "NOVA", "text": "Transmitting compressed causal archive of all 48 erased star systems... Target: 10,000 deep-space beacons."},
+      {"speaker": "THE WATCHER", "text": "You cannot bring them back, Clara. Their matter was dispersed into nothingness."},
+      {"speaker": "CLARA", "text": "No. But you cannot erase them twice. Every life, every culture, every tragedy—they will be known."},
+      {"speaker": "DR. SERA NAHL", "text": "Thank you, Commander Voss. The Veyr's legacy is finally freed from shame."},
+      {"speaker": "SYSTEM", "text": "[BROADCAST COMPLETE: 48 HISTORIES RECORDED ACROSS GALACTIC ARCHIVES]"},
+      {"speaker": "SYSTEM", "text": "[CONTINUUM ENGINE SYSTEM PURGE INITIATED]"},
+      {"speaker": "MALIK REYES", "text": "Clara! The sensors... billions of signals are lighting up the coms! The galaxy is answering!"},
+      {"speaker": "CLARA", "text": "We are not alone anymore. Let's go home."}
+    ],
+    "epilogue": [
+      "The Aegis-9 completes the broadcast as the alien core quietly powers down into harmless inert stone.",
+      "Across known space, billions of vessels, colonies, and stations receive the living archives of the vanished civilizations.",
+      "Monuments to the forty-eight star systems are erected on Earth, Mars, and the outer colonies.",
+      "Malik and Clara lead the joint scientific task force tasked with studying the peaceful preservation of quantum history.",
+      "In the night sky, people look at the dark coordinates not with terror, but with reverence: for the universe remembers."
+    ]
+  }
+}
