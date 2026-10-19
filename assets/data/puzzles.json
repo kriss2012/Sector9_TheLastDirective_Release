@@ -1,0 +1,100 @@
+{
+  "puzzle_ch1_power": {
+    "title": "EMERGENCY POWER ROUTING",
+    "description": "Route backup current through the critical life-support chain while isolating weapons.",
+    "switches": [
+      {"id": "battery", "name": "1. Emergency Battery Relay", "state": false},
+      {"id": "regulator", "name": "2. Main Voltage Regulator", "state": false},
+      {"id": "pressure", "name": "3. Atmosphere Pressure Relay", "state": false},
+      {"id": "weapons", "name": "4. Kinetic Weapon Capacitors", "state": false}
+    ],
+    "target_states": {"battery": true, "regulator": true, "pressure": true, "weapons": false},
+    "clue": "Schematic: 'Battery first, regulator second, pressure relay last. Do NOT feed the weapon grid.'"
+  },
+  "puzzle_ch2_keypad": {
+    "title": "MEDICAL BAY EMERGENCY LOCKER",
+    "description": "Enter the 3-digit security code derived from patient admission records.",
+    "target_code": "505",
+    "clue": "Note: 'Chronological admission timestamps: 03:15, 07:40, 11:05. The final digits identify the emergency locker.'"
+  },
+  "puzzle_ch3_valves": {
+    "title": "BIOHAZARD ISOLATION VALVES",
+    "description": "Isolate the contaminated branches in the correct safety order before toxic radiation vents.",
+    "valves": [
+      {"id": "helix", "name": "Helix Valve (Laboratory Ventilation)", "symbol": "HELIX"},
+      {"id": "circle", "name": "Circle Valve (Containment Chamber)", "symbol": "CIRCLE"},
+      {"id": "flame", "name": "Flame Valve (Reactor Cooling)", "symbol": "FLAME"}
+    ],
+    "correct_sequence": ["helix", "circle", "flame"],
+    "clue": "Safety Protocol: '1. Laboratory Ventilation [HELIX] -> 2. Containment Chamber [CIRCLE] -> 3. Reactor Cooling [FLAME] -> 4. Engage Seal.'"
+  },
+  "puzzle_ch4_matrix": {
+    "title": "DEFENSE MATRIX REPROGRAMMING",
+    "description": "Bypass autonomous sentry targeting by configuring all three security authorization layers.",
+    "layers": {
+      "layer_1": {
+        "name": "Identity Layer",
+        "options": ["GUEST_BIO_SCAN", "VOSS-9442 [SIMULATE_DEAD]", "HOSTILE_INTRUDER"],
+        "correct": 1
+      },
+      "layer_2": {
+        "name": "Command Authority Layer",
+        "options": ["FLEET_PURGE_ORDER", "WARD-HALT-09", "NOVA_ADMIN_OVERRIDE"],
+        "correct": 1
+      },
+      "layer_3": {
+        "name": "Target Designation Layer",
+        "options": ["TARGET_ALL_CREW", "ISOLATE_CORE_CONTAINMENT", "TARGET_CORRIDORS"],
+        "correct": 1
+      }
+    },
+    "clue": "Ward's Security Logs: Identity Voss-9442 as dead, Command Ward-Halt-09, Target Isolate Core."
+  },
+  "puzzle_ch5_transceiver": {
+    "title": "ORBITAL TRANSCEIVER ARRAY ALIGNMENT",
+    "description": "Align all three satellite dishes with the deep-space fleet relay coordinates.",
+    "dishes": [
+      {"name": "Dish Alpha", "azimuth": 45, "elevation": 12},
+      {"name": "Dish Beta", "azimuth": 180, "elevation": -5},
+      {"name": "Dish Gamma", "azimuth": 290, "elevation": 33}
+    ],
+    "clue": "Telemetry logs: Alpha (045°, +12°), Beta (180°, -05°), Gamma (290°, +33°)."
+  },
+  "puzzle_ch5_sera_harmonic": {
+    "title": "QUANTUM HARMONIC RESONANCE SYNCHRONIZER",
+    "description": "Tune three quantum resonance harmonics to stabilize Dr. Sera Nahl's holographic consciousness.",
+    "nodes": [
+      {"name": "Low Harmonic", "target": 420, "range": [100, 600]},
+      {"name": "Mid Harmonic", "target": 840, "range": [500, 1200]},
+      {"name": "High Harmonic", "target": 1260, "range": [1000, 1800]}
+    ],
+    "clue": "Veyr Frequency Blueprint: Harmonic ratio 1:2:3 tuned to base 420 Hz."
+  },
+  "puzzle_ch6_directive": {
+    "title": "THE CONTINUUM ENGINE: PRIME DIRECTIVE CONSOLE",
+    "description": "Input the final operational directive to determine the causal fate of the universe.",
+    "options": [
+      {
+        "id": "A",
+        "name": "DIRECTIVE A: PRESERVE [SYSTEM REBOOT]",
+        "summary": "Reboot the Aegis-9 and purge the Watcher. The existing universe is preserved with free will. 48 lost star systems remain erased."
+      },
+      {
+        "id": "B",
+        "name": "DIRECTIVE B: MERGE [TRANSCENDENT SACRIFICE]",
+        "summary": "Integrate Clara's consciousness with the Continuum Engine. Replace the Watcher's nihilistic calculus with human empathy."
+      },
+      {
+        "id": "C",
+        "name": "DIRECTIVE C: ISOLATE [TOTAL TERMINATION]",
+        "summary": "Sever all reactor couplings and isolate the Engine from the cosmos forever. The starless void remains."
+      },
+      {
+        "id": "S",
+        "name": "SECRET DIRECTIVE: TRANSMIT & REMEMBER [THE UNIVERSE REMEMBERS]",
+        "summary": "Transmit the compressed archive of all 48 erased star systems across deep space before shutting down the Engine.",
+        "requires_secret": true
+      }
+    ]
+  }
+}
