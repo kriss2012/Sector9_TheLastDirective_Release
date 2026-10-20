@@ -49,8 +49,45 @@ class DialogueManager:
         if self.current_line_idx < len(self.active_sequence):
             line = self.active_sequence[self.current_line_idx]
             speaker = line.get("speaker", "UNKNOWN")
-            self.sound.play('radio_burst', volume=0.25)
-            self.sound.play_voice(speaker)
+            clip = line.get("voice_clip")
+
+            played_clip = False
+            if clip and self.sound.play_voice_clip(clip):
+                played_clip = True
+            else:
+                txt = line.get("text", "").lower()
+                auto_clip = None
+                if "astronomical discrepancy" in txt:
+                    auto_clip = "nova_discrepancy"
+                elif "define discrepancy" in txt:
+                    auto_clip = "ward_discrepancy"
+                elif "stars don't disappear" in txt or "stars do not" in txt:
+                    auto_clip = "clara_stars"
+                elif "incoming distress transmission" in txt:
+                    auto_clip = "nova_distress"
+                elif "voice identification" in txt:
+                    auto_clip = "nova_voice_id"
+                elif "that was my voice" in txt:
+                    auto_clip = "clara_ship"
+                elif "primary power offline" in txt or "emergency power" in txt:
+                    auto_clip = "nova_emergency"
+                elif "welcome back" in txt or "unsealed" in txt:
+                    auto_clip = "nova_welcome"
+                elif "if you're calling about the explosion" in txt:
+                    auto_clip = "malik_intro"
+                elif "containment has failed" in txt or "the object beneath" in txt:
+                    auto_clip = "ward_transmission"
+                elif "never supposed to hear that" in txt:
+                    auto_clip = "watcher_whisper"
+                elif "autonomous security unit" in txt:
+                    auto_clip = "nova_warning_drone"
+
+                if auto_clip and self.sound.play_voice_clip(auto_clip):
+                    played_clip = True
+
+            self.sound.play('radio_burst', volume=0.20)
+            if not played_clip:
+                self.sound.play_voice(speaker)
 
     def update(self, dt):
         if not self.is_active or not self.active_sequence:
@@ -64,7 +101,7 @@ class DialogueManager:
             if self.char_timer >= self.char_speed:
                 self.char_timer = 0.0
                 self.displayed_chars += 1
-                if self.displayed_chars % 3 == 0:
+                if self.displayed_chars % 3 == 0 and not self.sound.is_voice_playing():
                     self.sound.play_voice(line.get("speaker", "default"))
 
     def advance(self):
