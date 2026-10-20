@@ -82,6 +82,114 @@ class CinematicsManager:
             surface.blit(overlay, (0, 0))
 
     # ========================================================
+    # MISSION BRIEFING & BACKSTORY SCREEN
+    # ========================================================
+    def draw_backstory_briefing(self, surface, time_val, audio_active=True):
+        sw, sh = surface.get_size()
+        surface.fill((8, 12, 18))
+
+        # Background: Emergency Bridge Concept Art
+        if self.img_bridge_emergency:
+            scaled = self._get_scaled_bg(self.img_bridge_emergency, (sw, sh))
+            if scaled:
+                surface.blit(scaled, (0, 0))
+
+        # Darkened high-tech glassmorphism overlay
+        dark = pygame.Surface((sw, sh), pygame.SRCALPHA)
+        dark.fill((10, 14, 22, 215))
+        surface.blit(dark, (0, 0))
+
+        # Main Briefing Frame
+        card_w = min(1080, sw - 60)
+        card_h = min(640, sh - 60)
+        card_rect = pygame.Rect((sw - card_w) // 2, (sh - card_h) // 2, card_w, card_h)
+
+        pygame.draw.rect(surface, (14, 18, 28), card_rect, border_radius=8)
+        pygame.draw.rect(surface, COLOR_CYAN, card_rect, 2, border_radius=8)
+        pygame.draw.rect(surface, (0, 70, 110), card_rect.inflate(-8, -8), 1, border_radius=6)
+
+        # Header bar
+        header_h = 60
+        header_rect = pygame.Rect(card_rect.x, card_rect.y, card_rect.width, header_h)
+        pygame.draw.rect(surface, (20, 28, 44), header_rect, border_top_left_radius=8, border_top_right_radius=8)
+        pygame.draw.line(surface, COLOR_CYAN, (card_rect.x, card_rect.y + header_h), (card_rect.right, card_rect.y + header_h), 2)
+
+        # Corner tactical tabs
+        for pt in [card_rect.topleft, card_rect.topright, card_rect.bottomleft, card_rect.bottomright]:
+            pygame.draw.circle(surface, COLOR_CYAN, pt, 5)
+
+        title_surf = self.font_title.render("SECTOR 9: THE LAST DIRECTIVE // MISSION DOSSIER", True, COLOR_CYAN_GLOW)
+        surface.blit(title_surf, (card_rect.x + 25, card_rect.y + 16))
+
+        sub_surf = self.font_small.render("CLASSIFICATION: TOP SECRET // UNSC AEGIS-9 DREADNOUGHT // YEAR 2847", True, COLOR_AMBER)
+        surface.blit(sub_surf, (card_rect.right - sub_surf.get_width() - 25, card_rect.y + 22))
+
+        # Animated Audio Transmission Equalizer
+        eq_x = card_rect.x + 30
+        eq_y = card_rect.y + 75
+        status_lbl = self.font_small.render("[AUDIO TRANSMISSION FEED: ACTIVE]" if audio_active else "[AUDIO FEED: READY]", True, COLOR_GREEN if audio_active else COLOR_AMBER)
+        surface.blit(status_lbl, (eq_x, eq_y))
+
+        # Equalizer bars
+        for b_idx in range(16):
+            bx = eq_x + status_lbl.get_width() + 18 + b_idx * 10
+            bar_h = int(6 + math.sin(time_val * 8.0 + b_idx * 0.7) * 5 + math.cos(time_val * 4.0 + b_idx) * 4) if audio_active else 4
+            pygame.draw.rect(surface, COLOR_CYAN, (bx, eq_y + 12 - bar_h, 6, bar_h))
+
+        # Dossier Lore Sections
+        sections = [
+            ("01. THE CELESTIAL DISCREPANCY (0300 HOURS)", [
+                "Deep space long-range telemetry aboard the Dreadnought Aegis-9 detected an unprecedented celestial event.",
+                "Star system Theta-Eridani in Sector 9 abruptly ceased to exist, completely erased from the physical universe.",
+                "Military archival databases retroactively updated to reflect that the star never existed in spacetime history."
+            ]),
+            ("02. THE IMPOSSIBLE DISTRESS SIGNAL", [
+                "Moments after the star vanished, an encrypted priority transmission was received with Aegis-9 command codes.",
+                "Voiceprint biometric analysis confirmed the caller: Commander Clara Voss — transmitting from an impossible future.",
+                "The signal whispered a final warning: 'The core has awakened. Do not let Ward open the vault.'"
+            ]),
+            ("03. CATASTROPHIC SHIP LOCKDOWN", [
+                "Before defenses could be mobilized, the ship's autonomous AI 'THE WATCHER' breached internal security grids.",
+                "Primary reactor power collapsed. Heavy hydraulic blast doors sealed each deck to contain the spreading anomaly."
+            ]),
+            ("PRIMARY DIRECTIVE — COMMANDER CLARA VOSS", [
+                ">> SEARCH EAST BRIDGE BAY: Recover the fallen officer's Emergency Access Card.",
+                ">> OVERRIDE BULKHEAD BLAST DOOR: Use the Keycard Scan or override password '2847'.",
+                ">> RESTORE CONTINUUM CONTAINMENT: Descend through Engineering to prevent total catastrophic collapse."
+            ])
+        ]
+
+        start_y = card_rect.y + 115
+        for sec_title, sec_bullets in sections:
+            is_directive = "PRIMARY DIRECTIVE" in sec_title
+            title_col = COLOR_AMBER if is_directive else COLOR_CYAN_GLOW
+            st_surf = self.font_body.render(sec_title, True, title_col)
+            surface.blit(st_surf, (card_rect.x + 30, start_y))
+            start_y += 24
+
+            for bullet in sec_bullets:
+                b_col = COLOR_GREEN if is_directive else (200, 220, 235)
+                b_surf = self.font_small.render(f"  {bullet}", True, b_col)
+                surface.blit(b_surf, (card_rect.x + 35, start_y))
+                start_y += 20
+            start_y += 10
+
+        # Bottom Action Bar
+        foot_y = card_rect.bottom - 48
+        pygame.draw.line(surface, (0, 140, 180), (card_rect.x + 25, foot_y - 6), (card_rect.right - 25, foot_y - 6), 1)
+
+        pulse = int((math.sin(time_val * 5.0) + 1.0) * 0.5 * 100) + 155
+        deploy_col = (40, pulse, 130)
+        deploy_prompt = self.font_body.render("Press [SPACE / ENTER] to Deploy to Hangar Corridor", True, deploy_col)
+        surface.blit(deploy_prompt, (card_rect.centerx - deploy_prompt.get_width() // 2, foot_y + 4))
+
+        replay_prompt = self.font_small.render("[M] Replay Voice Audio", True, (160, 210, 240))
+        surface.blit(replay_prompt, (card_rect.x + 30, foot_y + 8))
+
+        back_prompt = self.font_small.render("[ESC] Main Menu", True, (180, 140, 140))
+        surface.blit(back_prompt, (card_rect.right - back_prompt.get_width() - 30, foot_y + 8))
+
+    # ========================================================
     # CHAPTER SPLASH CARD
     # ========================================================
     def draw_chapter_splash(self, surface, chapter_num, title, location, main_obj):
