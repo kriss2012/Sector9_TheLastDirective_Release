@@ -102,11 +102,14 @@ class GameEngine:
         self.ending_timer = 0.0
 
         # Menu options
-        self.menu_options = ["NEW CAMPAIGN", "CONTINUE MISSION", "MISSION ARCHIVES", "CONTROLS", "CREDITS", "EXIT"]
+        self.menu_options = ["NEW CAMPAIGN", "CONTINUE MISSION", "MISSION DOSSIER (BACKSTORY)", "CONTROLS", "CREDITS", "EXIT"]
         self.menu_idx = 0
         self.menu_btn_rects = []
         self.credits_active = False
         self.controls_active = False
+        self.briefing_voice_idx = 0
+        self.briefing_voice_timer = 0.0
+        self.briefing_clips = ['briefing_intro', 'briefing_star', 'briefing_directive']
 
         self.load_chapter_level(0)
 
@@ -172,13 +175,33 @@ class GameEngine:
 
     def start_new_game(self):
         logger.info("start_new_game called")
+        self.state = 'MISSION_BRIEFING'
+        self.toggle_mouse(False)
+        self.briefing_voice_idx = 0
+        self.briefing_voice_timer = 0.0
+        self.sound.start_ambient('ambient_dreadnought_hum')
+        self.sound.play_voice_clip(self.briefing_clips[0])
+        logger.info("Entered MISSION_BRIEFING with full backstory transmission")
+
+    def open_backstory_briefing(self):
+        self.state = 'MISSION_BRIEFING'
+        self.toggle_mouse(False)
+        self.briefing_voice_idx = 0
+        self.briefing_voice_timer = 0.0
+        self.sound.start_ambient('ambient_dreadnought_hum')
+        self.sound.play_voice_clip(self.briefing_clips[0])
+
+    def deploy_from_briefing(self):
+        logger.info("deploy_from_briefing called")
+        self.sound.play('access_granted')
+        self.sound.play('door_open')
         self.player = Player()
         self.quest_mgr = QuestManager()
         self.load_chapter_level(0)
         self.state = 'PLAYING'
         self.toggle_mouse(True)
         self.cinematics.run_prologue_cutscene(self.screen, self.clock, self.dialogue, self._on_prologue_done)
-        logger.info(f"start_new_game done, state={self.state}, dialogue_active={self.dialogue.is_active}")
+        logger.info(f"deploy_from_briefing complete, state={self.state}")
 
     def _on_prologue_done(self):
         logger.info("_on_prologue_done called, continuing PLAYING")
@@ -198,7 +221,7 @@ class GameEngine:
         ch = self.quest_mgr.current_chapter
         if ch == 0:
             if not self.player.has_item("Emergency Access Card"):
-                return (9.5, 2.5, "FALLEN OFFICER (ACCESS CARD)")
+                return (9.5, 2.0, "FALLEN OFFICER (ACCESS CARD)")
             elif not self.quest_mgr.has_flag("bridge_unlocked"):
                 return (3.5, 4.0, "BULKHEAD DOOR (OVERRIDE / SCAN)")
             else:
@@ -513,6 +536,15 @@ class GameEngine:
                 self.state = 'PLAYING'
                 self.toggle_mouse(True)
 
+        elif self.state == 'MISSION_BRIEFING':
+            if not self.sound.is_voice_playing():
+                self.briefing_voice_timer += dt
+                if self.briefing_voice_timer > 1.2:
+                    self.briefing_voice_timer = 0.0
+                    self.briefing_voice_idx += 1
+                    if self.briefing_voice_idx < len(self.briefing_clips):
+                        self.sound.play_voice_clip(self.briefing_clips[self.briefing_voice_idx])
+
         elif self.state == 'PROLOGUE_CUTSCENE':
             self.dialogue.update(dt)
 
@@ -551,6 +583,8 @@ class GameEngine:
                                         self.state = 'PLAYING'
                                         self.toggle_mouse(True)
                                         self.sound.play('access_granted')
+                                elif opt in ["MISSION DOSSIER (BACKSTORY)", "MISSION ARCHIVES"]:
+                                    self.open_backstory_briefing()
                                 elif opt == "CONTROLS":
                                     self.controls_active = True
                                 elif opt == "CREDITS":
@@ -581,6 +615,8 @@ class GameEngine:
                                 self.state = 'PLAYING'
                                 self.toggle_mouse(True)
                                 self.sound.play('access_granted')
+                        elif opt in ["MISSION DOSSIER (BACKSTORY)", "MISSION ARCHIVES"]:
+                            self.open_backstory_briefing()
                         elif opt == "CONTROLS":
                             self.controls_active = True
                             self.sound.play('ui_beep')
@@ -590,6 +626,18 @@ class GameEngine:
                         elif opt == "EXIT":
                             pygame.quit()
                             sys.exit()
+
+            elif self.state == 'MISSION_BRIEFING':
+                if event.type == pygame.KEYDOWN:
+                    if event.key in [pygame.K_SPACE, pygame.K_RETURN]:
+                        self.deploy_from_briefing()
+                    elif event.key == pygame.K_m:
+                        self.sound.play_voice_clip(self.briefing_clips[self.briefing_voice_idx % len(self.briefing_clips)])
+                    elif event.key == pygame.K_ESCAPE:
+                        self.state = 'MAIN_MENU'
+                        self.sound.stop_ambient()
+                elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+                    self.deploy_from_briefing()
 
             elif self.state == 'PLAYING':
                 if self.dialogue.is_active:
@@ -882,6 +930,9 @@ class GameEngine:
 
             if self.dialogue.is_active:
                 self.dialogue.draw(self.screen)
+
+        elif self.state == 'MISSION_BRIEFING':
+            self.cinematics.draw_backstory_briefing(self.screen, self.game_timer, audio_active=self.sound.is_voice_playing())
 
         elif self.state == 'ENDING':
             self.cinematics.draw_ending_screen(self.screen, self.selected_ending, self.ending_stage, self.ending_timer)
