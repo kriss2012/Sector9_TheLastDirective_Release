@@ -36,23 +36,23 @@ class LevelManager:
     def _build_prologue():
         grid = [
             "##############",
-            "#P...#.......#",
-            "#.T..#...C...#",
-            "#....#.......#",
+            "#P...........#",
+            "#.T......C...#",
+            "#............#",
             "###D##########",
             "#............#",
             "#.T....E.....#",
             "##############"
         ]
-        # P: Spawn at (1.5, 1.5)
+        # P: Spawn at (1.8, 1.8, 0.0) facing east down the grand hangar corridor
         # T at (2, 2): Damaged Bridge Console (Hale's chip)
-        # C at (9, 2): Fallen officer with Emergency Access Card (marked as objective beacon!)
-        # D at (3, 4): Bridge Security Door (Supports Card Scan OR Password '2847'!)
+        # C at (9, 2): Fallen officer with Emergency Access Card
+        # D at (3, 4): Bulkhead Blast Door to Engineering Foyer
         # E at (7, 6): Engineering Lift to Deck 04
         sprites = [
-            SpriteObject(9.5, 2.5, 'fallen_crew', entity_id='fallen_officer', interactive=True, label="[E] Retrieve Emergency Access Card", is_objective=True),
-            SpriteObject(2.5, 2.5, 'chip', entity_id='hale_chip_sprite', interactive=True, label="[E] Read Damaged Console", is_objective=True),
-            SpriteObject(7.5, 2.5, 'cryo_capsule', entity_id='bridge_cryo', interactive=False)
+            SpriteObject(9.5, 2.0, 'fallen_crew', entity_id='fallen_officer', interactive=True, label="[E] Retrieve Emergency Access Card", is_objective=True),
+            SpriteObject(2.2, 2.0, 'chip', entity_id='hale_chip_sprite', interactive=True, label="[E] Read Damaged Console", is_objective=True),
+            SpriteObject(7.0, 2.0, 'cryo_capsule', entity_id='bridge_cryo', interactive=False)
         ]
         interactions = {
             (2, 2): {"type": "console", "id": "bridge_console"},
@@ -60,7 +60,7 @@ class LevelManager:
             (3, 4): {"type": "door_puzzle", "id": "bridge_door"},
             (7, 6): {"type": "lift", "next_chapter": 1, "id": "lift_deck_04"}
         }
-        return LevelData(0, grid, (1.5, 1.5, 0.0), 'bridge', sprites, interactions)
+        return LevelData(0, grid, (1.8, 1.8, 0.0), 'bridge', sprites, interactions)
 
     # ========================================================
     # CHAPTER 1: SYSTEMS OFFLINE — ENGINEERING DECK
