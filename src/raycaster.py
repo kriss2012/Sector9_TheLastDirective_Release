@@ -25,49 +25,65 @@ class Raycaster:
         h = self.render_height
         w = self.render_width
 
-        # Ceiling & Floor Theme Lighting (Matching Reference Images 1 & 2)
+        # Ceiling & Floor Theme Colors (Matching env_hangar_corridor.jpg and env_lab_cryo.jpg)
         if theme == 'lab':
-            ceil_base = (20, 16, 32)
-            floor_base = (16, 14, 24)
+            ceil_base = (26, 20, 38)
+            floor_base = (20, 16, 30)
             neon_color = (195, 70, 255)
         elif theme == 'engineering':
-            ceil_base = (24, 20, 18)
-            floor_base = (20, 18, 16)
-            neon_color = (255, 120, 40)
+            ceil_base = (32, 26, 22)
+            floor_base = (26, 20, 16)
+            neon_color = (255, 130, 40)
         elif theme == 'vault' or theme == 'engine':
-            ceil_base = (14, 10, 22)
-            floor_base = (12, 8, 18)
+            ceil_base = (18, 14, 28)
+            floor_base = (14, 10, 22)
             neon_color = (180, 50, 255)
         else:
-            # Bridge / Hangar (Image 1 style: cool titanium blue with cyan neon)
-            ceil_base = (22, 28, 40)
-            floor_base = (18, 22, 30)
-            neon_color = (0, 220, 255)
+            # Bridge / Hangar (Image 1 style: deep steel blue with bright cyan/white ceiling beams)
+            ceil_base = (30, 38, 52)
+            floor_base = (24, 30, 40)
+            neon_color = (0, 225, 255)
 
         surface.fill(ceil_base, (0, 0, w, h // 2))
         surface.fill(floor_base, (0, h // 2, w, h // 2))
 
-        # Overhead central linear neon fixture (matching Image 1)
-        overhead_w = int(w * 0.18)
-        overhead_x = (w - overhead_w) // 2
-        for ly in range(0, h // 2, 4):
-            intensity = int(max(0, 1.0 - (ly / (h // 2))) * 45)
-            line_col = (
-                min(255, neon_color[0] // 3 + intensity),
-                min(255, neon_color[1] // 3 + intensity),
-                min(255, neon_color[2] // 3 + intensity)
-            )
-            pygame.draw.line(surface, line_col, (overhead_x, ly), (overhead_x + overhead_w, ly), 1)
+        # Overhead central linear neon fixture in realistic 3D perspective (matching env_hangar_corridor.jpg)
+        for ly in range(0, h // 2, 2):
+            # Tapers down from foreground (top of screen) towards horizon vanishing point
+            persp_factor = ((h // 2) - ly) / (h // 2)
+            cur_w = max(4, int(w * 0.38 * persp_factor))
+            cur_x = (w - cur_w) // 2
 
-        # Floor Perspective Grate Lines with yellow hazard border
-        for y_idx in range(h // 2, h, 6):
-            depth_factor = (y_idx - h // 2) / (h // 2)
-            shade = int(20 + depth_factor * 35)
-            pygame.draw.line(surface, (shade, shade + 2, shade + 6), (0, y_idx), (w, y_idx))
+            glow_val = int(persp_factor * 75)
+            line_col = (
+                min(255, neon_color[0] // 3 + glow_val),
+                min(255, neon_color[1] // 3 + glow_val),
+                min(255, neon_color[2] // 3 + glow_val)
+            )
+            pygame.draw.line(surface, line_col, (cur_x, ly), (cur_x + cur_w, ly), 1)
+
+            # Central bright white core
+            core_w = max(2, int(cur_w * 0.35))
+            pygame.draw.line(surface, (240, 255, 255), (w // 2 - core_w // 2, ly), (w // 2 + core_w // 2, ly), 1)
+
+        # Floor Perspective Grating with metallic sheen and hazard margins (Image 1 style)
+        for y_idx in range(h // 2, h, 3):
+            persp_factor = (y_idx - (h // 2)) / (h // 2)
+            metal_shade = int(22 + persp_factor * 56)
+            pygame.draw.line(surface, (metal_shade, metal_shade + 4, metal_shade + 9), (0, y_idx), (w, y_idx), 1)
+
+            # Dual yellow hazard perspective track converging towards horizon
+            track_w = int(w * 0.65 * persp_factor)
+            hazard_x1 = (w - track_w) // 2
+            hazard_x2 = (w + track_w) // 2
+
+            if (y_idx // 6) % 2 == 0:
+                h_col = (min(255, int(210 * persp_factor)), min(255, int(155 * persp_factor)), 20)
+                pygame.draw.line(surface, h_col, (hazard_x1 - 4, y_idx), (hazard_x1 + 4, y_idx), 2)
+                pygame.draw.line(surface, h_col, (hazard_x2 - 4, y_idx), (hazard_x2 + 4, y_idx), 2)
 
         # DDA Raycasting Loop
         start_angle = pa - HALF_FOV
-        tex_size = 256
         default_wall_tex = self.textures.get(theme, self.textures['bridge'])
 
         for ray in range(self.num_rays):
@@ -146,35 +162,47 @@ class Raycaster:
             else:
                 texture = default_wall_tex
 
+            tex_w = texture.get_width()
+            tex_h = texture.get_height()
+
             if side == 0:
                 wall_x = py + perp_wall_dist * sin_a
             else:
                 wall_x = px + perp_wall_dist * cos_a
             wall_x -= math.floor(wall_x)
 
-            tex_x = int(wall_x * tex_size)
+            tex_x = int(wall_x * tex_w)
             if (side == 0 and cos_a > 0) or (side == 1 and sin_a < 0):
-                tex_x = tex_size - tex_x - 1
+                tex_x = tex_w - tex_x - 1
 
-            tex_x = max(0, min(tex_size - 1, tex_x))
+            tex_x = max(0, min(tex_w - 1, tex_x))
 
-            dist_factor = min(1.0, perp_wall_dist / MAX_DEPTH)
-            shade = 0.75 if side == 1 else 1.0
-
-            if player.flashlight_on:
-                center_offset = abs(ray - self.num_rays // 2) / (self.num_rays // 2)
-                flashlight_boost = max(0.0, (1.0 - center_offset * 1.4) * (1.0 - dist_factor * 0.6) * 0.7)
-                shade = min(1.3, shade + flashlight_boost)
-
-            col_slice = texture.subsurface((tex_x, 0, 1, tex_size))
+            # Sample vertical texture slice
+            col_slice = texture.subsurface((tex_x, 0, 1, tex_h))
             scaled_slice = pygame.transform.scale(col_slice, (1, draw_end - draw_start))
 
-            final_alpha = int(max(0, min(255, (1.0 - (shade * (1.0 - dist_factor))) * 255)))
-            if final_alpha > 0:
-                dark_surf = pygame.Surface((1, draw_end - draw_start))
-                dark_surf.fill((0, 0, 0))
-                dark_surf.set_alpha(final_alpha)
-                scaled_slice.blit(dark_surf, (0, 0))
+            # Balanced Ambient Sci-Fi Lighting:
+            # Guarantees sharp, vibrant visibility of textures and details
+            dist_factor = min(1.0, perp_wall_dist / MAX_DEPTH)
+            min_ambient = 0.62  # Ample ambient light so corridors are clearly visible
+            brightness = min_ambient + (1.0 - min_ambient) * (1.0 - dist_factor)
+
+            # Subtle side shading for 3D realism
+            side_mult = 0.88 if side == 1 else 1.0
+            brightness *= side_mult
+
+            # Flashlight searchlight cone
+            if player.flashlight_on:
+                center_offset = abs(ray - self.num_rays // 2) / (self.num_rays // 2)
+                if center_offset < 0.75:
+                    boost = (1.0 - center_offset / 0.75) * max(0.0, 1.0 - dist_factor * 0.6) * 0.55
+                    brightness = min(1.35, brightness + boost)
+
+            # Fast in-place lighting tint (no surface allocations)
+            r_tint = int(min(255, 255 * brightness))
+            g_tint = int(min(255, 255 * brightness * (0.96 + 0.04 * (1.0 - dist_factor))))
+            b_tint = int(min(255, 255 * brightness * (1.0 + 0.08 * (1.0 - dist_factor))))
+            scaled_slice.fill((r_tint, g_tint, b_tint), special_flags=pygame.BLEND_MULT)
 
             surface.blit(scaled_slice, (ray, draw_start))
 
