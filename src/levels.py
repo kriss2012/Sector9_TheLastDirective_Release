@@ -2,17 +2,24 @@ import pygame
 from src.sprite_renderer import SpriteObject
 
 class LevelData:
-    def __init__(self, chapter_id, map_grid, player_spawn, theme, sprites=None, interactions=None):
+    def __init__(self, chapter_id, map_grid, player_spawn, theme, sprites=None, interactions=None,
+                 doors=None, wall_tex_map=None):
         self.chapter_id = chapter_id
         self.map_grid = map_grid
         self.player_spawn = player_spawn
         self.theme = theme
         self.sprites = sprites or []
         self.interactions = interactions or {}
+        self.doors = doors                  # optional DoorSystem (space lobby)
+        self.wall_tex_map = wall_tex_map    # optional {(x, y): texture_name}
 
 class LevelManager:
     @staticmethod
-    def get_level(chapter_id):
+    def get_level(chapter_id, state=None):
+        """`state` is only used by the space lobby (to restore saved door/pickup progress)."""
+        if chapter_id == 7:
+            from src.lobby import build_lobby_level
+            return build_lobby_level(state)
         if chapter_id == 0:
             return LevelManager._build_prologue()
         elif chapter_id == 1:
