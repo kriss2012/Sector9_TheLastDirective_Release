@@ -1,1 +1,5 @@
 Sector9_TheLastDirective.exe
+
+# Python bytecode
+__pycache__/
+*.pyc
