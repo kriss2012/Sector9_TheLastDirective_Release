@@ -28,6 +28,7 @@ from src.ui_manager import UIManager
 from src.cinematics import CinematicsManager
 from src.save_system import SaveSystem
 from src.levels import LevelManager
+from src.lobby import LobbyController, LobbyState, LOBBY_CHAPTER_ID
 from src.ai_watcher import WatcherDrone
 from src.puzzles import (
     BridgeDoorOverridePuzzle, PowerRoutingPuzzle, MedicalKeypadPuzzle,
@@ -88,6 +89,7 @@ class GameEngine:
         self.game_timer = 0.0
 
         self.current_level = None
+        self.lobby = None  # LobbyController while in the space lobby
         self.level_map = []
         self.sprites = []
         self.watcher_drones = []
@@ -102,7 +104,7 @@ class GameEngine:
         self.ending_timer = 0.0
 
         # Menu options
-        self.menu_options = ["NEW CAMPAIGN", "CONTINUE MISSION", "MISSION DOSSIER (BACKSTORY)", "CONTROLS", "CREDITS", "EXIT"]
+        self.menu_options = ["NEW CAMPAIGN", "CONTINUE MISSION", "SPACE LOBBY", "MISSION ARCHIVES", "CONTROLS", "CREDITS", "EXIT"]
         self.menu_idx = 0
         self.menu_btn_rects = []
         self.credits_active = False
@@ -151,10 +153,12 @@ class GameEngine:
 
     def load_chapter_level(self, chapter_id):
         self.quest_mgr.current_chapter = chapter_id
-        level_data = LevelManager.get_level(chapter_id)
+        level_data = LevelManager.get_level(
+            chapter_id, LobbyState(self) if chapter_id == LOBBY_CHAPTER_ID else None)
         self.current_level = level_data
         self.level_map = [list(r) for r in level_data.map_grid]
         self.sprites = list(level_data.sprites)
+        self.lobby = LobbyController(self, level_data) if chapter_id == LOBBY_CHAPTER_ID else None
 
         sp_x, sp_y, sp_a = level_data.player_spawn
         self.player.x = sp_x
@@ -172,6 +176,31 @@ class GameEngine:
 
         if chapter_id > 0:
             SaveSystem.save_game("autosave", self.player, self.quest_mgr, self.level_map)
+
+    def start_lobby(self):
+        """Start fresh in the space lobby hub (menu: SPACE LOBBY, or `--lobby`)."""
+        self.player = Player()
+        self.quest_mgr = QuestManager()
+        self.load_chapter_level(LOBBY_CHAPTER_ID)
+        self.state = 'PLAYING'
+        self.toggle_mouse(True)
+        self.feedback_message = "DIRECTIVE: Find a Level-1 Keycard in the Supply Locker (north-west)"
+        self.feedback_timer = 7.0
+
+    def launch_from_lobby(self):
+        """Launch airlock used: finish the lobby mission and deploy to Chapter 1."""
+        self.quest_mgr.complete_objective("launch", self.player)
+        self.sound.play('access_granted')
+        self.load_chapter_level(1)
+        self.state = 'CHAPTER_SPLASH'
+        self.toggle_mouse(False)
+
+    def _render_world(self, theme):
+        lvl = self.current_level
+        doors = lvl.doors.by_cell if (lvl and lvl.doors) else None
+        wall_map = lvl.wall_tex_map if lvl else None
+        return self.raycaster.render(self.render_surf, self.player, self.level_map,
+                                     theme=theme, doors=doors, wall_tex_map=wall_map)
 
     def start_new_game(self):
         logger.info("start_new_game called")
@@ -218,6 +247,8 @@ class GameEngine:
 
     def get_current_objective_target(self):
         """Finds coordinates of current prime objective for the HUD compass."""
+        if self.lobby:
+            return self.lobby.objective_target()
         ch = self.quest_mgr.current_chapter
         if ch == 0:
             if not self.player.has_item("Emergency Access Card"):
@@ -289,7 +320,9 @@ class GameEngine:
         if found_action:
             cx, cy, info = found_action
             t = info.get("type")
-            if t == "door_puzzle":
+            if t in ("lobby_door", "lobby_terminal"):
+                self.interaction_prompt = self.lobby.prompt(info) if self.lobby else ""
+            elif t == "door_puzzle":
                 self.interaction_prompt = "[E] Access Bulkhead Security Panel (Card / Password)"
             elif t == "door":
                 req = info.get("requires")
@@ -324,6 +357,8 @@ class GameEngine:
 
     def execute_interaction(self, target):
         if not target: return
+        if self.lobby and self.lobby.handle(target):
+            return
         t_type = target[0]
 
         if t_type == "sprite":
@@ -476,6 +511,9 @@ class GameEngine:
             for sp in self.sprites:
                 sp.update(dt)
 
+            if self.lobby:
+                self.lobby.update(dt)
+
             if self.dialogue.is_active:
                 self.dialogue.update(dt)
 
@@ -487,6 +525,9 @@ class GameEngine:
                 return
 
             if self.active_puzzle.is_completed:
+                on_complete = getattr(self.active_puzzle, 'on_complete', None)
+                if on_complete:
+                    on_complete()
                 if isinstance(self.active_puzzle, BridgeDoorOverridePuzzle):
                     self.quest_mgr.set_flag("bridge_unlocked")
                     self.quest_mgr.complete_objective("unlock_bridge_door", self.player)
@@ -583,6 +624,8 @@ class GameEngine:
                                         self.state = 'PLAYING'
                                         self.toggle_mouse(True)
                                         self.sound.play('access_granted')
+                                elif opt == "SPACE LOBBY":
+                                    self.start_lobby()
                                 elif opt in ["MISSION DOSSIER (BACKSTORY)", "MISSION ARCHIVES"]:
                                     self.open_backstory_briefing()
                                 elif opt == "CONTROLS":
@@ -615,6 +658,8 @@ class GameEngine:
                                 self.state = 'PLAYING'
                                 self.toggle_mouse(True)
                                 self.sound.play('access_granted')
+                        elif opt == "SPACE LOBBY":
+                            self.start_lobby()
                         elif opt in ["MISSION DOSSIER (BACKSTORY)", "MISSION ARCHIVES"]:
                             self.open_backstory_briefing()
                         elif opt == "CONTROLS":
@@ -859,7 +904,7 @@ class GameEngine:
 
         elif self.state == 'PLAYING':
             theme = self.current_level.theme if self.current_level else 'bridge'
-            z_buf = self.raycaster.render(self.render_surf, self.player, self.level_map, theme=theme)
+            z_buf = self._render_world(theme)
             self.sprite_renderer.render_sprites(
                 self.render_surf, self.sprites, self.player, z_buf,
                 RENDER_WIDTH, RENDER_HEIGHT, FOV, HALF_FOV
@@ -878,6 +923,9 @@ class GameEngine:
 
             # HUD Overlay
             self.ui_mgr.draw_hud(self.screen, self.player, self.quest_mgr, self.interaction_prompt, objective_target=obj_target)
+
+            if self.lobby:
+                self.lobby.draw_overlay(self.screen)
 
             # Active Dialogue Subtitles
             if self.dialogue.is_active:
@@ -915,7 +963,7 @@ class GameEngine:
 
         elif self.state == 'PROLOGUE_CUTSCENE':
             theme = self.current_level.theme if self.current_level else 'bridge'
-            z_buf = self.raycaster.render(self.render_surf, self.player, self.level_map, theme=theme)
+            z_buf = self._render_world(theme)
             self.sprite_renderer.render_sprites(
                 self.render_surf, self.sprites, self.player, z_buf,
                 RENDER_WIDTH, RENDER_HEIGHT, FOV, HALF_FOV
