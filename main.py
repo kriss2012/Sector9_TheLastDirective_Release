@@ -31,6 +31,7 @@ from src.engine import GameEngine
 def main():
     parser = argparse.ArgumentParser(description="Sector 9: The Last Directive")
     parser.add_argument("--headless", action="store_true", help="Run without graphical display (for testing)")
+    parser.add_argument("--lobby", action="store_true", help="Start directly in the space lobby hub")
     args = parser.parse_args()
 
     # Headless check
@@ -45,6 +46,9 @@ def main():
 
     game = GameEngine(headless=args.headless)
     logger.info(f"Engine initialized. Screen: {game.screen_width}x{game.screen_height}, Fullscreen: {game.is_fullscreen}")
+
+    if args.lobby:
+        game.start_lobby()
 
     # If headless, run a self-test tick and exit gracefully
     if args.headless:
