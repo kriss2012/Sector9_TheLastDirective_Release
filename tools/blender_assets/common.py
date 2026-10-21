@@ -4,7 +4,7 @@ Run any build_*.py from Blender, e.g.:
     blender --background --python tools/blender_assets/build_pistol.py -- --out assets/models
 
 Conventions (all scripts): metres, +Y = forward / muzzle direction, +Z = up,
-+X = character's left side as seen from behind. Weapon origin = grip centre.
++X = character's right side (looking along +Y). Weapon origin = grip centre.
 """
 import math
 import os
@@ -132,8 +132,6 @@ def smooth_all(root):
         if obj.type == "MESH":
             for poly in obj.data.polygons:
                 poly.use_smooth = True
-            if "Bevel" not in obj.modifiers:
-                continue
 
 
 def add_socket(root, name, loc, rot=(0, 0, 0)):
@@ -148,13 +146,13 @@ def add_socket(root, name, loc, rot=(0, 0, 0)):
     return sock
 
 
-def export_asset(root, out_dir, basename):
+def export_asset(root, out_dir, basename, apply_mods=True, **gltf_kwargs):
     """Save <basename>.blend and <basename>.glb into out_dir."""
     smooth_all(root)
     blend_path = os.path.join(out_dir, basename + ".blend")
     glb_path = os.path.join(out_dir, basename + ".glb")
     bpy.ops.wm.save_as_mainfile(filepath=blend_path)
     bpy.ops.export_scene.gltf(filepath=glb_path, export_format="GLB",
-                              export_apply=True, use_selection=False)
+                              export_apply=apply_mods, use_selection=False, **gltf_kwargs)
     print("[Sector9] wrote", blend_path)
     print("[Sector9] wrote", glb_path)
