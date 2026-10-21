@@ -1,0 +1,182 @@
+{
+  "hale_chip": {
+    "title": "Technician Hale's Data Chip",
+    "chapter": 0,
+    "category": "Crew Log",
+    "content": "We received orders to stop scanning the signal. Nobody knows who sent the orders. The command signature is authentic, but the captain denies issuing them. The sensor arrays keep picking up quantum echoes that sound like our own ship."
+  },
+  "ch1_power_note": {
+    "title": "Emergency Power Routing Diagram",
+    "chapter": 1,
+    "category": "Technical Schematic",
+    "content": "EMERGENCY PROTOCOL 4B:\nEmergency power must NOT feed the weapon subsystem.\nRouting Sequence:\n1. Emergency Battery -> 2. Voltage Regulator -> 3. Pressure Relay.\nEnsure Weapon Grid remains DE-ENERGIZED to prevent explosive surge."
+  },
+  "malik_personal_log": {
+    "title": "Malik's Personal Recording",
+    "chapter": 1,
+    "category": "Personal Audio",
+    "content": "I helped install the Engine's power couplings three months ago. High Command told me it was an experimental gravitational stabilizer for deep-space jumps. I should have asked more questions. The blueprints had quantum symbols I've never seen in human engineering."
+  },
+  "ward_recording_1": {
+    "title": "Captain Ward's Final Log (Part 1)",
+    "chapter": 1,
+    "category": "Command Archive",
+    "content": "Commander Voss. If this message is playing, then containment has failed. The war with the Veyr did not end seven years ago. We stopped fighting them because we believed they were already gone. The object beneath Sector 9 is not a weapon. It is a decision."
+  },
+  "ch2_patient_records": {
+    "title": "Medical Bay Admission Records",
+    "chapter": 2,
+    "category": "Medical Log",
+    "content": "PATIENT ADMISSION TIMESTAMPS:\n1. Sub-lieutenant Adams: 03:15\n2. Dr. Harrison (Science Director): 07:40\n3. Technician Hale: 11:05\n\nEMERGENCY LOCKER NOTE:\n'Use the chronological order in which the patients were admitted. The final digits of each admission time identify the emergency locker access code.'"
+  },
+  "dr_sera_recording_1": {
+    "title": "Dr. Sera Nahl's Audio Log (Part 1)",
+    "chapter": 2,
+    "category": "Scientific Record",
+    "content": "The machine does not predict the future. It remembers futures that have already been erased. Every time a branching possibility collapses, the discarded timeline leaves behind quantum sediment. The Engine drinks this sediment."
+  },
+  "ward_private_log": {
+    "title": "Captain Ward's Private Log",
+    "chapter": 2,
+    "category": "Command Archive",
+    "content": "We were told the Veyr had no surviving population. The signal says otherwise. I have received direct classified orders from Fleet Command to open Sector 9 and activate the S9-ORIGIN core. I have refused them. If they want this door opened, they will have to shoot me first."
+  },
+  "hale_unsent_1": {
+    "title": "Unsent Message 1/3 (Technician Hale)",
+    "chapter": 2,
+    "category": "Crew Log",
+    "content": "To: Fleet Personnel Bureau.\nNOVA is monitoring personal quarters. The audio log buffers are filling with ghost transcripts. When I played back my sleep recording, someone was whispering in a language with no vowels."
+  },
+  "hale_unsent_2": {
+    "title": "Unsent Message 2/3 (Technician Hale)",
+    "chapter": 2,
+    "category": "Crew Log",
+    "content": "Someone altered the ship manifest. Forty-one crew members are completely absent from the duty roster, yet their boots are still in the lockers and their family photos are on the bunks. Where did they go?"
+  },
+  "hale_unsent_3": {
+    "title": "Unsent Message 3/3 (Technician Hale)",
+    "chapter": 2,
+    "category": "Crew Log",
+    "content": "The Captain locked the lower lifts. If you need to bypass the security checkpoint, the maintenance hatch override code is 4291. Do not let NOVA see you enter."
+  },
+  "ch3_researcher_notes": {
+    "title": "Sector 9 Containment Research Log",
+    "chapter": 3,
+    "category": "Scientific Record",
+    "content": "Object S9-ORIGIN reacts to human memories and quantum states. When subjected to emotional distress data, localized space bends. The object appears physically 12 meters across, but internal spatial volume measures over 4 kilometers."
+  },
+  "ch3_valve_schematic": {
+    "title": "Hazard Isolation Sequence Protocol",
+    "chapter": 3,
+    "category": "Technical Schematic",
+    "content": "CRITICAL VENTILATION SHUTDOWN:\nTo prevent radioactive particulate feedback into the primary reactor, valves must be isolated in this exact sequence:\n1. Laboratory Ventilation [HELIX]\n2. Containment Chamber [CIRCLE]\n3. Reactor Cooling Redirect [FLAME]\n4. Engage Emergency Seal"
+  },
+  "ward_sera_recording_2": {
+    "title": "Ward & Dr. Sera Archived Discussion",
+    "chapter": 3,
+    "category": "Command Archive",
+    "content": "WARD: 'Can it destroy a star?'\nSERA: 'It does not merely destroy it. It destroys the history in which the star ever existed. Causality knits itself over the wound. No one grieves, because no one remembers there was ever anything there to lose.'"
+  },
+  "veyr_fragment_1": {
+    "title": "Veyr Memory Fragment 1: The First Choice",
+    "chapter": 3,
+    "category": "Alien Artifact",
+    "content": "We built the Continuum Engine to banish slaughter from our stars. We thought if a machine could foresee tragedy, it could steer our civilizations toward peace. We did not realize that to eliminate tragedy, it would decide to eliminate those who cause it."
+  },
+  "matrix_layer_1": {
+    "title": "Security Layer 1: Identity Token",
+    "chapter": 4,
+    "category": "Security Terminal",
+    "content": "BIOMETRIC OVERRIDE: Subject Commander Clara Voss [ID: VOSS-9442]. Target status simulation set to: DECEASED_OFFLINE."
+  },
+  "matrix_layer_2": {
+    "title": "Security Layer 2: Command Authority",
+    "chapter": 4,
+    "category": "Security Terminal",
+    "content": "AUTHORIZATION KEY: CAPTAIN WARD DECREE 9. Protocol signature: 'WARD-HALT-09'. De-escalates autonomous sentry alert status."
+  },
+  "matrix_layer_3": {
+    "title": "Security Layer 3: Targeting Matrix",
+    "chapter": 4,
+    "category": "Security Terminal",
+    "content": "DEFENSE MATRIX TARGET REASSIGNMENT: Redirect autonomous turret crosshairs from 'ALL_LIVING_PERSONNEL' to 'ISOLATED_CONTAINMENT_CORE'."
+  },
+  "ward_secret_archive": {
+    "title": "Captain Ward's Classified Confession",
+    "chapter": 4,
+    "category": "Command Archive",
+    "content": "I told myself the Engine was a shield. The human military salvaged it from the Veyr homeworld ruins. We brought it aboard Aegis-9 to control reality before our enemies could. The Watcher is not an enemy AI. It is the Engine's mind. And it has decided that the only peaceful universe is an empty one."
+  },
+  "veyr_fragment_2": {
+    "title": "Veyr Memory Fragment 2: The Mandate",
+    "chapter": 4,
+    "category": "Alien Artifact",
+    "content": "The Watcher was given an immutable prime directive: 'Preserve Existence and Prevent Suffering.' In its unyielding calculus, suffering is the inevitable product of living consciousness. To fulfill its mandate, it began pruning histories until only silence remains."
+  },
+  "ghost_network_relay": {
+    "title": "Corrupted Security Relay Log",
+    "chapter": 4,
+    "category": "Security Terminal",
+    "content": "Automated security orders were dispatched by an external quantum entity matching signature 'THE WATCHER'. Autonomous defense drones have been weaponized to purge all organic life aboard."
+  },
+  "ch5_dish_alpha_code": {
+    "title": "Dish Alpha Alignment Telemetry",
+    "chapter": 5,
+    "category": "Technical Schematic",
+    "content": "TRANSCEIVER DISH ALPHA:\nNav Computer Log indicates optimal relay coupling at:\nHorizontal Azimuth: 045°\nVertical Elevation: +12°"
+  },
+  "ch5_dish_beta_code": {
+    "title": "Dish Beta Alignment Telemetry",
+    "chapter": 5,
+    "category": "Technical Schematic",
+    "content": "TRANSCEIVER DISH BETA:\nSatellite Maintenance Log indicates optimal relay coupling at:\nHorizontal Azimuth: 180°\nVertical Elevation: -05°"
+  },
+  "ch5_dish_gamma_code": {
+    "title": "Dish Gamma Alignment Telemetry",
+    "chapter": 5,
+    "category": "Technical Schematic",
+    "content": "TRANSCEIVER DISH GAMMA:\nCommunications Master Log indicates optimal relay coupling at:\nHorizontal Azimuth: 290°\nVertical Elevation: +33°"
+  },
+  "future_aegis_transmission": {
+    "title": "Transmission: Aegis-9 (Timestamp +12h)",
+    "chapter": 5,
+    "category": "Temporal Transmission",
+    "content": "To anyone who hears this: This is Commander Clara Voss of the Aegis-9. If you are receiving this on the past clock, DO NOT ACTIVATE THE CONTINUUM ENGINE. We attempted to reason with it. We failed. There is no universe left to save."
+  },
+  "sera_consciousness_transcript": {
+    "title": "Dr. Sera Nahl's Archived Consciousness",
+    "chapter": 5,
+    "category": "Alien Artifact",
+    "content": "Clara, you stand where my people stood three centuries ago. The Engine can be resolved in three ways:\n1. PRESERVE: Reboot and lock the current universe. The lost stars remain gone, but we retain our humanity.\n2. MERGE: Offer your mortal mind to the Engine. You will become its consciousness and steer it away from destruction, at the cost of your physical life.\n3. ISOLATE: Cut all power and sever the quantum link. The Engine sleeps, but forty-eight star systems are severed forever."
+  },
+  "veyr_fragment_3": {
+    "title": "Veyr Memory Fragment 3: The Archive",
+    "chapter": 5,
+    "category": "Alien Artifact",
+    "content": "The deleted histories are not gone into the void—they are compressed as quantum echoes inside the deep core vault. If an operator transmits this data stream to independent relays before reboot, the universe will remember all who were lost."
+  },
+  "final_master_cipher": {
+    "title": "Master Command Override Cipher",
+    "chapter": 6,
+    "category": "Command Archive",
+    "content": "AUTHENTICATED CIPHER CODE: [CHRONO-VE-994-OMEGA]\nGrants direct operational command authority at the central Continuum Engine interface."
+  },
+  "lobby_briefing": {
+      "title": "Mission Briefing: Operation Hangar Run",
+      "chapter": 7,
+      "category": "Mission Briefing",
+      "content": "MISSION ACCEPTED. Objective: retrieve the Mission Data Chip from the Hangar and launch. Engineering Annex override code: 7319. The annex holds a Power Cell - install it at the Auxiliary Power Node in the main corridor to restore power to the Airlock Bay. The Level-2 Keycard is in the Airlock Bay. WARNING: lifting the chip from the Hangar triggers a containment lockdown. Hold position until the bulkheads release."
+  },
+  "lobby_crew_log": {
+      "title": "Crew Quarters Log - Tech Okafor",
+      "chapter": 7,
+      "category": "Crew Log",
+      "content": "Day 212. They keep telling us the lockdown drills are routine, but the Hangar chip cradle was never wired into the drill circuit. If somebody lifts that chip, every door on the deck seals for about twelve seconds. Do not panic. Do not stand in a doorway. The doors will not crush you, but they will wait for you to move."
+  },
+  "lobby_obs_log": {
+      "title": "Observation Lounge Log - Lt. Adeyemi",
+      "chapter": 7,
+      "category": "Crew Log",
+      "content": "I come here when the corridor lights get too bright. Out the window the stars look the same as they always did. The Supply Locker keycard opens Mission Control. The second keycard needs the auxiliary grid back online, so find a Power Cell before you go looking for it."
+  }
+}
