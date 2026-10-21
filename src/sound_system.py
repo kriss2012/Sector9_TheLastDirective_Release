@@ -107,6 +107,21 @@ class SoundSystem:
             thud = np.sin(2 * np.pi * 90 * t) * np.exp(-t * 45)
             self.sounds['footstep'] = self._make_sound(thud)
 
+        # Pneumatic door slide (open): air hiss + rising servo whine
+        if 'door_blast_open' not in self.sounds and 'door_open' not in self.sounds:
+            t = np.linspace(0, 0.55, int(sr * 0.55), False)
+            hiss = (np.random.rand(len(t)) * 2 - 1) * 0.35 * np.sin(np.pi * t / 0.55)
+            servo = np.sin(2 * np.pi * (180 + 260 * t) * t) * 0.25 * np.sin(np.pi * t / 0.55)
+            self.sounds['door_open'] = self._make_sound(hiss + servo)
+
+        # Door seal (close): servo whine down + heavy latch thud
+        if 'door_blast_close' not in self.sounds and 'door_close' not in self.sounds:
+            t = np.linspace(0, 0.5, int(sr * 0.5), False)
+            servo = np.sin(2 * np.pi * (420 - 300 * t) * t) * 0.22 * np.exp(-t * 3)
+            since_latch = np.clip(t - 0.3, 0.0, None)
+            thud = np.sin(2 * np.pi * 70 * t) * np.exp(-since_latch * 18) * (t > 0.3) * 0.9
+            self.sounds['door_close'] = self._make_sound(servo + thud)
+
         # Voice chatter blips
         chars = {'clara': 380, 'ward': 180, 'nova': 580, 'malik': 260, 'watcher': 110, 'default': 440}
         for name, freq in chars.items():
