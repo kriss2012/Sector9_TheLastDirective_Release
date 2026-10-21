@@ -33,8 +33,8 @@ class TestQuests(unittest.TestCase):
         self.assertTrue(res)
         self.assertEqual(self.quest_mgr.current_chapter, 1)
 
-    def test_all_seven_chapters_loadable(self):
-        for ch_id in range(7):
+    def test_all_chapters_loadable(self):
+        for ch_id in range(8):
             level = LevelManager.get_level(ch_id)
             self.assertEqual(level.chapter_id, ch_id)
             self.assertTrue(len(level.map_grid) > 0)
