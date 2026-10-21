@@ -1,0 +1,2368 @@
+{
+  "config": {
+    "seed": 1337,
+    "output_dir": "/tmp/claude-0/-home-claude/12e72f2a-5bc8-5200-b21f-63e01fc3e49a/scratchpad/out_full",
+    "build_male": true,
+    "build_female": true,
+    "build_weapons": true,
+    "build_animations": true,
+    "build_camera": true,
+    "attach_demo_weapons": true,
+    "bake_textures": true,
+    "bake_resolution": 1024,
+    "bake_samples": 1,
+    "export_blend": true,
+    "export_glb": true,
+    "export_per_asset_glb": true,
+    "fps": 30,
+    "render_previews": false,
+    "preview_resolution": 768,
+    "head_segments": 96,
+    "limb_sides": 16,
+    "finger_sides": 8,
+    "skin_max_influences": 4
+  },
+  "steps": [
+    "weapons built: handgun:4 parts, machinegun:8 parts, kukri:5 parts",
+    "Male: 13 meshes, 49 bones, shape keys ['jaw_open', 'smile', 'brow_down', 'brow_up', 'blink_squint']",
+    "Male: actions ['Idle', 'Walk', 'Run', 'Crouch', 'Crouch_Walk', 'Sit', 'Aim_Rifle', 'Fire_Rifle', 'Reload_Rifle', 'Aim_Pistol', 'Fire_Pistol', 'Reload_Pistol']",
+    "Female: 13 meshes, 53 bones, shape keys ['jaw_open', 'smile', 'brow_down', 'brow_up', 'blink_squint']",
+    "Female: actions ['Idle', 'Walk', 'Run', 'Crouch', 'Crouch_Walk', 'Sit', 'Aim_Rifle', 'Fire_Rifle', 'Reload_Rifle', 'Aim_Pistol', 'Fire_Pistol', 'Reload_Pistol']",
+    "UV unwrapped 77 meshes",
+    "saved /tmp/claude-0/-home-claude/12e72f2a-5bc8-5200-b21f-63e01fc3e49a/scratchpad/out_full/survival_horror_assets.blend",
+    "baking 77 meshes @ 1024px ...",
+    "baking finished",
+    "exported /tmp/claude-0/-home-claude/12e72f2a-5bc8-5200-b21f-63e01fc3e49a/scratchpad/out_full/glb/weapon_handgun.glb",
+    "exported /tmp/claude-0/-home-claude/12e72f2a-5bc8-5200-b21f-63e01fc3e49a/scratchpad/out_full/glb/weapon_machinegun.glb",
+    "exported /tmp/claude-0/-home-claude/12e72f2a-5bc8-5200-b21f-63e01fc3e49a/scratchpad/out_full/glb/weapon_kukri.glb",
+    "exported /tmp/claude-0/-home-claude/12e72f2a-5bc8-5200-b21f-63e01fc3e49a/scratchpad/out_full/glb/character_male.glb",
+    "exported /tmp/claude-0/-home-claude/12e72f2a-5bc8-5200-b21f-63e01fc3e49a/scratchpad/out_full/glb/character_female.glb",
+    "exported /tmp/claude-0/-home-claude/12e72f2a-5bc8-5200-b21f-63e01fc3e49a/scratchpad/out_full/glb/survival_horror_scene.glb"
+  ],
+  "files": [
+    "/tmp/claude-0/-home-claude/12e72f2a-5bc8-5200-b21f-63e01fc3e49a/scratchpad/out_full/survival_horror_assets.blend",
+    "/tmp/claude-0/-home-claude/12e72f2a-5bc8-5200-b21f-63e01fc3e49a/scratchpad/out_full/glb/weapon_handgun.glb",
+    "/tmp/claude-0/-home-claude/12e72f2a-5bc8-5200-b21f-63e01fc3e49a/scratchpad/out_full/glb/weapon_machinegun.glb",
+    "/tmp/claude-0/-home-claude/12e72f2a-5bc8-5200-b21f-63e01fc3e49a/scratchpad/out_full/glb/weapon_kukri.glb",
+    "/tmp/claude-0/-home-claude/12e72f2a-5bc8-5200-b21f-63e01fc3e49a/scratchpad/out_full/glb/character_male.glb",
+    "/tmp/claude-0/-home-claude/12e72f2a-5bc8-5200-b21f-63e01fc3e49a/scratchpad/out_full/glb/character_female.glb",
+    "/tmp/claude-0/-home-claude/12e72f2a-5bc8-5200-b21f-63e01fc3e49a/scratchpad/out_full/glb/survival_horror_scene.glb"
+  ],
+  "glb_verify": {
+    "weapon_handgun.glb": {
+      "meshes": 4,
+      "armatures": 0,
+      "skinned_meshes": 0,
+      "actions": 3,
+      "action_names": [
+        "Handgun_Magazine_Reload",
+        "Handgun_Slide_Fire",
+        "Handgun_Trigger_Fire"
+      ],
+      "images": 24,
+      "shape_keys": 0
+    },
+    "weapon_machinegun.glb": {
+      "meshes": 8,
+      "armatures": 0,
+      "skinned_meshes": 0,
+      "actions": 3,
+      "action_names": [
+        "MG_Bolt_Fire",
+        "MG_ChargingHandle_Reload",
+        "MG_Magazine_Reload"
+      ],
+      "images": 51,
+      "shape_keys": 0
+    },
+    "weapon_kukri.glb": {
+      "meshes": 5,
+      "armatures": 0,
+      "skinned_meshes": 0,
+      "actions": 0,
+      "action_names": [],
+      "images": 48,
+      "shape_keys": 0
+    },
+    "character_male.glb": {
+      "meshes": 14,
+      "armatures": 1,
+      "skinned_meshes": 13,
+      "actions": 12,
+      "action_names": [
+        "Aim_Pistol",
+        "Aim_Rifle",
+        "Crouch",
+        "Crouch_Walk",
+        "Fire_Pistol",
+        "Fire_Rifle",
+        "Idle",
+        "Reload_Pistol",
+        "Reload_Rifle",
+        "Run",
+        "Sit",
+        "Walk"
+      ],
+      "images": 102,
+      "shape_keys": 1
+    },
+    "character_female.glb": {
+      "meshes": 14,
+      "armatures": 1,
+      "skinned_meshes": 13,
+      "actions": 12,
+      "action_names": [
+        "Aim_Pistol",
+        "Aim_Rifle",
+        "Crouch",
+        "Crouch_Walk",
+        "Fire_Pistol",
+        "Fire_Rifle",
+        "Idle",
+        "Reload_Pistol",
+        "Reload_Rifle",
+        "Run",
+        "Sit",
+        "Walk"
+      ],
+      "images": 105,
+      "shape_keys": 1
+    },
+    "survival_horror_scene.glb": {
+      "meshes": 79,
+      "armatures": 2,
+      "skinned_meshes": 26,
+      "actions": 30,
+      "action_names": [
+        "Aim_Pistol",
+        "Aim_Rifle",
+        "Crouch",
+        "Crouch_Walk",
+        "Female_Handgun_Magazine_Reload",
+        "Female_Handgun_Slide_Fire",
+        "Female_Handgun_Trigger_Fire",
+        "Female_MG_Bolt_Fire",
+        "Female_MG_ChargingHandle_Reload",
+        "Female_MG_Magazine_Reload",
+        "Fire_Pistol",
+        "Fire_Rifle",
+        "Handgun_Magazine_Reload",
+        "Handgun_Slide_Fire",
+        "Handgun_Trigger_Fire",
+        "Idle",
+        "MG_Bolt_Fire",
+        "MG_ChargingHandle_Reload",
+        "MG_Magazine_Reload",
+        "Male_Handgun_Magazine_Reload",
+        "Male_Handgun_Slide_Fire",
+        "Male_Handgun_Trigger_Fire",
+        "Male_MG_Bolt_Fire",
+        "Male_MG_ChargingHandle_Reload",
+        "Male_MG_Magazine_Reload",
+        "Reload_Pistol",
+        "Reload_Rifle",
+        "Run",
+        "Sit",
+        "Walk"
+      ],
+      "images": 576,
+      "shape_keys": 2
+    }
+  },
+  "validation": {
+    "passed": 438,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "Male: armature bone count",
+        "ok": true,
+        "detail": "49 bones"
+      },
+      {
+        "name": "Male: socket bones",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Body: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Body: materials assigned",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Body: face material indices valid",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Body: armature modifier",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Body: parented to armature",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Body: vertex groups \u2286 bones",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Body: all verts weighted",
+        "ok": true,
+        "detail": "0 unweighted"
+      },
+      {
+        "name": "Male_Body: <= 4 influences & normalised",
+        "ok": true,
+        "detail": "over=0 unnorm=0"
+      },
+      {
+        "name": "Male_Head: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Head: materials assigned",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Head: face material indices valid",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Head: armature modifier",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Head: parented to armature",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Head: vertex groups \u2286 bones",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Head: all verts weighted",
+        "ok": true,
+        "detail": "0 unweighted"
+      },
+      {
+        "name": "Male_Head: <= 4 influences & normalised",
+        "ok": true,
+        "detail": "over=0 unnorm=0"
+      },
+      {
+        "name": "Male_Eyes: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Eyes: materials assigned",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Eyes: face material indices valid",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Eyes: armature modifier",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Eyes: parented to armature",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Eyes: vertex groups \u2286 bones",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Eyes: all verts weighted",
+        "ok": true,
+        "detail": "0 unweighted"
+      },
+      {
+        "name": "Male_Eyes: <= 4 influences & normalised",
+        "ok": true,
+        "detail": "over=0 unnorm=0"
+      },
+      {
+        "name": "Male_Brows: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Brows: materials assigned",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Brows: face material indices valid",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Brows: armature modifier",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Brows: parented to armature",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Brows: vertex groups \u2286 bones",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Brows: all verts weighted",
+        "ok": true,
+        "detail": "0 unweighted"
+      },
+      {
+        "name": "Male_Brows: <= 4 influences & normalised",
+        "ok": true,
+        "detail": "over=0 unnorm=0"
+      },
+      {
+        "name": "Male_Hair: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Hair: materials assigned",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Hair: face material indices valid",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Hair: armature modifier",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Hair: parented to armature",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Hair: vertex groups \u2286 bones",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Hair: all verts weighted",
+        "ok": true,
+        "detail": "0 unweighted"
+      },
+      {
+        "name": "Male_Hair: <= 4 influences & normalised",
+        "ok": true,
+        "detail": "over=0 unnorm=0"
+      },
+      {
+        "name": "Male_Beard: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Beard: materials assigned",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Beard: face material indices valid",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Beard: armature modifier",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Beard: parented to armature",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Beard: vertex groups \u2286 bones",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Beard: all verts weighted",
+        "ok": true,
+        "detail": "0 unweighted"
+      },
+      {
+        "name": "Male_Beard: <= 4 influences & normalised",
+        "ok": true,
+        "detail": "over=0 unnorm=0"
+      },
+      {
+        "name": "Male_Shirt: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Shirt: materials assigned",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Shirt: face material indices valid",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Shirt: armature modifier",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Shirt: parented to armature",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Shirt: vertex groups \u2286 bones",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Shirt: all verts weighted",
+        "ok": true,
+        "detail": "0 unweighted"
+      },
+      {
+        "name": "Male_Shirt: <= 4 influences & normalised",
+        "ok": true,
+        "detail": "over=0 unnorm=0"
+      },
+      {
+        "name": "Male_Pants: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Pants: materials assigned",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Pants: face material indices valid",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Pants: armature modifier",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Pants: parented to armature",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Pants: vertex groups \u2286 bones",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Pants: all verts weighted",
+        "ok": true,
+        "detail": "0 unweighted"
+      },
+      {
+        "name": "Male_Pants: <= 4 influences & normalised",
+        "ok": true,
+        "detail": "over=0 unnorm=0"
+      },
+      {
+        "name": "Male_Boots: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Boots: materials assigned",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Boots: face material indices valid",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Boots: armature modifier",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Boots: parented to armature",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Boots: vertex groups \u2286 bones",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Boots: all verts weighted",
+        "ok": true,
+        "detail": "0 unweighted"
+      },
+      {
+        "name": "Male_Boots: <= 4 influences & normalised",
+        "ok": true,
+        "detail": "over=0 unnorm=0"
+      },
+      {
+        "name": "Male_Gloves: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Gloves: materials assigned",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Gloves: face material indices valid",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Gloves: armature modifier",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Gloves: parented to armature",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Gloves: vertex groups \u2286 bones",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Gloves: all verts weighted",
+        "ok": true,
+        "detail": "0 unweighted"
+      },
+      {
+        "name": "Male_Gloves: <= 4 influences & normalised",
+        "ok": true,
+        "detail": "over=0 unnorm=0"
+      },
+      {
+        "name": "Male_Gear: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Gear: materials assigned",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Gear: face material indices valid",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Gear: armature modifier",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Gear: parented to armature",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Gear: vertex groups \u2286 bones",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Gear: all verts weighted",
+        "ok": true,
+        "detail": "0 unweighted"
+      },
+      {
+        "name": "Male_Gear: <= 4 influences & normalised",
+        "ok": true,
+        "detail": "over=0 unnorm=0"
+      },
+      {
+        "name": "Male_Backpack: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Backpack: materials assigned",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Backpack: face material indices valid",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Backpack: armature modifier",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Backpack: parented to armature",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Backpack: vertex groups \u2286 bones",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Backpack: all verts weighted",
+        "ok": true,
+        "detail": "0 unweighted"
+      },
+      {
+        "name": "Male_Backpack: <= 4 influences & normalised",
+        "ok": true,
+        "detail": "over=0 unnorm=0"
+      },
+      {
+        "name": "Male_Jacket: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Jacket: materials assigned",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Jacket: face material indices valid",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Jacket: armature modifier",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Jacket: parented to armature",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Jacket: vertex groups \u2286 bones",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Jacket: all verts weighted",
+        "ok": true,
+        "detail": "0 unweighted"
+      },
+      {
+        "name": "Male_Jacket: <= 4 influences & normalised",
+        "ok": true,
+        "detail": "over=0 unnorm=0"
+      },
+      {
+        "name": "Male: face shape keys",
+        "ok": true,
+        "detail": "6"
+      },
+      {
+        "name": "Male: action Idle",
+        "ok": true,
+        "detail": "NLA track present"
+      },
+      {
+        "name": "Male: action Walk",
+        "ok": true,
+        "detail": "NLA track present"
+      },
+      {
+        "name": "Male: action Run",
+        "ok": true,
+        "detail": "NLA track present"
+      },
+      {
+        "name": "Male: action Crouch",
+        "ok": true,
+        "detail": "NLA track present"
+      },
+      {
+        "name": "Male: action Sit",
+        "ok": true,
+        "detail": "NLA track present"
+      },
+      {
+        "name": "Male: action Aim_Rifle",
+        "ok": true,
+        "detail": "NLA track present"
+      },
+      {
+        "name": "Male: action Fire_Rifle",
+        "ok": true,
+        "detail": "NLA track present"
+      },
+      {
+        "name": "Male: action Reload_Rifle",
+        "ok": true,
+        "detail": "NLA track present"
+      },
+      {
+        "name": "Male: action Aim_Pistol",
+        "ok": true,
+        "detail": "NLA track present"
+      },
+      {
+        "name": "Male: action Fire_Pistol",
+        "ok": true,
+        "detail": "NLA track present"
+      },
+      {
+        "name": "Male: action Reload_Pistol",
+        "ok": true,
+        "detail": "NLA track present"
+      },
+      {
+        "name": "Male: action 'Male_Idle' keyframes",
+        "ok": true,
+        "detail": "1780 keys, frames 0-90"
+      },
+      {
+        "name": "Male: action 'Male_Walk' keyframes",
+        "ok": true,
+        "detail": "3026 keys, frames 0-32"
+      },
+      {
+        "name": "Male: action 'Male_Run' keyframes",
+        "ok": true,
+        "detail": "2136 keys, frames 0-22"
+      },
+      {
+        "name": "Male: action 'Male_Crouch' keyframes",
+        "ok": true,
+        "detail": "2848 keys, frames 0-110"
+      },
+      {
+        "name": "Male: action 'Male_Crouch_Walk' keyframes",
+        "ok": true,
+        "detail": "1958 keys, frames 0-40"
+      },
+      {
+        "name": "Male: action 'Male_Sit' keyframes",
+        "ok": true,
+        "detail": "3382 keys, frames 0-126"
+      },
+      {
+        "name": "Male: action 'Male_Aim_Rifle' keyframes",
+        "ok": true,
+        "detail": "1780 keys, frames 0-90"
+      },
+      {
+        "name": "Male: action 'Male_Fire_Rifle' keyframes",
+        "ok": true,
+        "detail": "1602 keys, frames 0-8"
+      },
+      {
+        "name": "Male: action 'Male_Reload_Rifle' keyframes",
+        "ok": true,
+        "detail": "3560 keys, frames 1-96"
+      },
+      {
+        "name": "Male: action 'Male_Aim_Pistol' keyframes",
+        "ok": true,
+        "detail": "1780 keys, frames 0-90"
+      },
+      {
+        "name": "Male: action 'Male_Fire_Pistol' keyframes",
+        "ok": true,
+        "detail": "1958 keys, frames 0-10"
+      },
+      {
+        "name": "Male: action 'Male_Reload_Pistol' keyframes",
+        "ok": true,
+        "detail": "3560 keys, frames 1-96"
+      },
+      {
+        "name": "Male_Handgun_Slide: has geometry",
+        "ok": true,
+        "detail": "1370 faces"
+      },
+      {
+        "name": "Male_Handgun_Slide: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Handgun_Slide: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Handgun_Frame: has geometry",
+        "ok": true,
+        "detail": "1902 faces"
+      },
+      {
+        "name": "Male_Handgun_Frame: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Handgun_Frame: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Handgun_Trigger: has geometry",
+        "ok": true,
+        "detail": "108 faces"
+      },
+      {
+        "name": "Male_Handgun_Trigger: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Handgun_Trigger: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Handgun_Magazine: has geometry",
+        "ok": true,
+        "detail": "108 faces"
+      },
+      {
+        "name": "Male_Handgun_Magazine: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Handgun_Magazine: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "handgun: attachment points",
+        "ok": true,
+        "detail": "Male_ATT_Eject,Male_ATT_Grip_R,Male_ATT_Holster,Male_ATT_Muzzle,Male_ATT_Support_L"
+      },
+      {
+        "name": "Male_MG_Body: has geometry",
+        "ok": true,
+        "detail": "11260 faces"
+      },
+      {
+        "name": "Male_MG_Body: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_MG_Body: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_MG_Handguard: has geometry",
+        "ok": true,
+        "detail": "1380 faces"
+      },
+      {
+        "name": "Male_MG_Handguard: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_MG_Handguard: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_MG_FlashHider: has geometry",
+        "ok": true,
+        "detail": "413 faces"
+      },
+      {
+        "name": "Male_MG_FlashHider: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_MG_FlashHider: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_MG_Bolt: has geometry",
+        "ok": true,
+        "detail": "60 faces"
+      },
+      {
+        "name": "Male_MG_Bolt: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_MG_Bolt: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_MG_ChargingHandle: has geometry",
+        "ok": true,
+        "detail": "162 faces"
+      },
+      {
+        "name": "Male_MG_ChargingHandle: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_MG_ChargingHandle: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_MG_Magazine: has geometry",
+        "ok": true,
+        "detail": "870 faces"
+      },
+      {
+        "name": "Male_MG_Magazine: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_MG_Magazine: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_MG_Sight: has geometry",
+        "ok": true,
+        "detail": "2298 faces"
+      },
+      {
+        "name": "Male_MG_Sight: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_MG_Sight: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_MG_RearSight: has geometry",
+        "ok": true,
+        "detail": "162 faces"
+      },
+      {
+        "name": "Male_MG_RearSight: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_MG_RearSight: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "machinegun: attachment points",
+        "ok": true,
+        "detail": "Male_ATT_Eject.001,Male_ATT_Grip_R.001,Male_ATT_Muzzle.001,Male_ATT_Sight,Male_ATT_Sling_Rear,Male_ATT_Stock,Male_ATT_Support_L.001"
+      },
+      {
+        "name": "Male_Kukri_Blade: has geometry",
+        "ok": true,
+        "detail": "1476 faces"
+      },
+      {
+        "name": "Male_Kukri_Blade: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Kukri_Blade: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Kukri_Handle: has geometry",
+        "ok": true,
+        "detail": "1402 faces"
+      },
+      {
+        "name": "Male_Kukri_Handle: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Kukri_Handle: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Kukri_Sheath: has geometry",
+        "ok": true,
+        "detail": "1654 faces"
+      },
+      {
+        "name": "Male_Kukri_Sheath: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Kukri_Sheath: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Kukri_Karda: has geometry",
+        "ok": true,
+        "detail": "246 faces"
+      },
+      {
+        "name": "Male_Kukri_Karda: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Kukri_Karda: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Kukri_Chakmak: has geometry",
+        "ok": true,
+        "detail": "246 faces"
+      },
+      {
+        "name": "Male_Kukri_Chakmak: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Male_Kukri_Chakmak: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "kukri: attachment points",
+        "ok": true,
+        "detail": "Male_ATT_Belt_Frog,Male_ATT_Grip_R.002,Male_ATT_Sheath,Male_ATT_Tip"
+      },
+      {
+        "name": "Female: armature bone count",
+        "ok": true,
+        "detail": "53 bones"
+      },
+      {
+        "name": "Female: socket bones",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female: ponytail bones",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female: ponytail mesh present",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female: no earrings",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Body: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Body: materials assigned",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Body: face material indices valid",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Body: armature modifier",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Body: parented to armature",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Body: vertex groups \u2286 bones",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Body: all verts weighted",
+        "ok": true,
+        "detail": "0 unweighted"
+      },
+      {
+        "name": "Female_Body: <= 4 influences & normalised",
+        "ok": true,
+        "detail": "over=0 unnorm=0"
+      },
+      {
+        "name": "Female_Head: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Head: materials assigned",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Head: face material indices valid",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Head: armature modifier",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Head: parented to armature",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Head: vertex groups \u2286 bones",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Head: all verts weighted",
+        "ok": true,
+        "detail": "0 unweighted"
+      },
+      {
+        "name": "Female_Head: <= 4 influences & normalised",
+        "ok": true,
+        "detail": "over=0 unnorm=0"
+      },
+      {
+        "name": "Female_Eyes: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Eyes: materials assigned",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Eyes: face material indices valid",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Eyes: armature modifier",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Eyes: parented to armature",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Eyes: vertex groups \u2286 bones",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Eyes: all verts weighted",
+        "ok": true,
+        "detail": "0 unweighted"
+      },
+      {
+        "name": "Female_Eyes: <= 4 influences & normalised",
+        "ok": true,
+        "detail": "over=0 unnorm=0"
+      },
+      {
+        "name": "Female_Brows: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Brows: materials assigned",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Brows: face material indices valid",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Brows: armature modifier",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Brows: parented to armature",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Brows: vertex groups \u2286 bones",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Brows: all verts weighted",
+        "ok": true,
+        "detail": "0 unweighted"
+      },
+      {
+        "name": "Female_Brows: <= 4 influences & normalised",
+        "ok": true,
+        "detail": "over=0 unnorm=0"
+      },
+      {
+        "name": "Female_Hair: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Hair: materials assigned",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Hair: face material indices valid",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Hair: armature modifier",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Hair: parented to armature",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Hair: vertex groups \u2286 bones",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Hair: all verts weighted",
+        "ok": true,
+        "detail": "0 unweighted"
+      },
+      {
+        "name": "Female_Hair: <= 4 influences & normalised",
+        "ok": true,
+        "detail": "over=0 unnorm=0"
+      },
+      {
+        "name": "Female_Ponytail: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Ponytail: materials assigned",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Ponytail: face material indices valid",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Ponytail: armature modifier",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Ponytail: parented to armature",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Ponytail: vertex groups \u2286 bones",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Ponytail: all verts weighted",
+        "ok": true,
+        "detail": "0 unweighted"
+      },
+      {
+        "name": "Female_Ponytail: <= 4 influences & normalised",
+        "ok": true,
+        "detail": "over=0 unnorm=0"
+      },
+      {
+        "name": "Female_Shirt: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Shirt: materials assigned",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Shirt: face material indices valid",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Shirt: armature modifier",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Shirt: parented to armature",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Shirt: vertex groups \u2286 bones",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Shirt: all verts weighted",
+        "ok": true,
+        "detail": "0 unweighted"
+      },
+      {
+        "name": "Female_Shirt: <= 4 influences & normalised",
+        "ok": true,
+        "detail": "over=0 unnorm=0"
+      },
+      {
+        "name": "Female_Pants: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Pants: materials assigned",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Pants: face material indices valid",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Pants: armature modifier",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Pants: parented to armature",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Pants: vertex groups \u2286 bones",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Pants: all verts weighted",
+        "ok": true,
+        "detail": "0 unweighted"
+      },
+      {
+        "name": "Female_Pants: <= 4 influences & normalised",
+        "ok": true,
+        "detail": "over=0 unnorm=0"
+      },
+      {
+        "name": "Female_Boots: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Boots: materials assigned",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Boots: face material indices valid",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Boots: armature modifier",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Boots: parented to armature",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Boots: vertex groups \u2286 bones",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Boots: all verts weighted",
+        "ok": true,
+        "detail": "0 unweighted"
+      },
+      {
+        "name": "Female_Boots: <= 4 influences & normalised",
+        "ok": true,
+        "detail": "over=0 unnorm=0"
+      },
+      {
+        "name": "Female_Gloves: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Gloves: materials assigned",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Gloves: face material indices valid",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Gloves: armature modifier",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Gloves: parented to armature",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Gloves: vertex groups \u2286 bones",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Gloves: all verts weighted",
+        "ok": true,
+        "detail": "0 unweighted"
+      },
+      {
+        "name": "Female_Gloves: <= 4 influences & normalised",
+        "ok": true,
+        "detail": "over=0 unnorm=0"
+      },
+      {
+        "name": "Female_Gear: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Gear: materials assigned",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Gear: face material indices valid",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Gear: armature modifier",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Gear: parented to armature",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Gear: vertex groups \u2286 bones",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Gear: all verts weighted",
+        "ok": true,
+        "detail": "0 unweighted"
+      },
+      {
+        "name": "Female_Gear: <= 4 influences & normalised",
+        "ok": true,
+        "detail": "over=0 unnorm=0"
+      },
+      {
+        "name": "Female_Backpack: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Backpack: materials assigned",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Backpack: face material indices valid",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Backpack: armature modifier",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Backpack: parented to armature",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Backpack: vertex groups \u2286 bones",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Backpack: all verts weighted",
+        "ok": true,
+        "detail": "0 unweighted"
+      },
+      {
+        "name": "Female_Backpack: <= 4 influences & normalised",
+        "ok": true,
+        "detail": "over=0 unnorm=0"
+      },
+      {
+        "name": "Female_Jacket: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Jacket: materials assigned",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Jacket: face material indices valid",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Jacket: armature modifier",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Jacket: parented to armature",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Jacket: vertex groups \u2286 bones",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Jacket: all verts weighted",
+        "ok": true,
+        "detail": "0 unweighted"
+      },
+      {
+        "name": "Female_Jacket: <= 4 influences & normalised",
+        "ok": true,
+        "detail": "over=0 unnorm=0"
+      },
+      {
+        "name": "Female: face shape keys",
+        "ok": true,
+        "detail": "6"
+      },
+      {
+        "name": "Female: action Idle",
+        "ok": true,
+        "detail": "NLA track present"
+      },
+      {
+        "name": "Female: action Walk",
+        "ok": true,
+        "detail": "NLA track present"
+      },
+      {
+        "name": "Female: action Run",
+        "ok": true,
+        "detail": "NLA track present"
+      },
+      {
+        "name": "Female: action Crouch",
+        "ok": true,
+        "detail": "NLA track present"
+      },
+      {
+        "name": "Female: action Sit",
+        "ok": true,
+        "detail": "NLA track present"
+      },
+      {
+        "name": "Female: action Aim_Rifle",
+        "ok": true,
+        "detail": "NLA track present"
+      },
+      {
+        "name": "Female: action Fire_Rifle",
+        "ok": true,
+        "detail": "NLA track present"
+      },
+      {
+        "name": "Female: action Reload_Rifle",
+        "ok": true,
+        "detail": "NLA track present"
+      },
+      {
+        "name": "Female: action Aim_Pistol",
+        "ok": true,
+        "detail": "NLA track present"
+      },
+      {
+        "name": "Female: action Fire_Pistol",
+        "ok": true,
+        "detail": "NLA track present"
+      },
+      {
+        "name": "Female: action Reload_Pistol",
+        "ok": true,
+        "detail": "NLA track present"
+      },
+      {
+        "name": "Female: action 'Female_Idle' keyframes",
+        "ok": true,
+        "detail": "1940 keys, frames 0-90"
+      },
+      {
+        "name": "Female: action 'Female_Walk' keyframes",
+        "ok": true,
+        "detail": "3298 keys, frames 0-32"
+      },
+      {
+        "name": "Female: action 'Female_Run' keyframes",
+        "ok": true,
+        "detail": "2328 keys, frames 0-22"
+      },
+      {
+        "name": "Female: action 'Female_Crouch' keyframes",
+        "ok": true,
+        "detail": "3104 keys, frames 0-110"
+      },
+      {
+        "name": "Female: action 'Female_Crouch_Walk' keyframes",
+        "ok": true,
+        "detail": "2134 keys, frames 0-40"
+      },
+      {
+        "name": "Female: action 'Female_Sit' keyframes",
+        "ok": true,
+        "detail": "3686 keys, frames 0-126"
+      },
+      {
+        "name": "Female: action 'Female_Aim_Rifle' keyframes",
+        "ok": true,
+        "detail": "1940 keys, frames 0-90"
+      },
+      {
+        "name": "Female: action 'Female_Fire_Rifle' keyframes",
+        "ok": true,
+        "detail": "1746 keys, frames 0-8"
+      },
+      {
+        "name": "Female: action 'Female_Reload_Rifle' keyframes",
+        "ok": true,
+        "detail": "3880 keys, frames 1-96"
+      },
+      {
+        "name": "Female: action 'Female_Aim_Pistol' keyframes",
+        "ok": true,
+        "detail": "1940 keys, frames 0-90"
+      },
+      {
+        "name": "Female: action 'Female_Fire_Pistol' keyframes",
+        "ok": true,
+        "detail": "2134 keys, frames 0-10"
+      },
+      {
+        "name": "Female: action 'Female_Reload_Pistol' keyframes",
+        "ok": true,
+        "detail": "3880 keys, frames 1-96"
+      },
+      {
+        "name": "Female_Handgun_Slide: has geometry",
+        "ok": true,
+        "detail": "1370 faces"
+      },
+      {
+        "name": "Female_Handgun_Slide: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Handgun_Slide: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Handgun_Frame: has geometry",
+        "ok": true,
+        "detail": "1902 faces"
+      },
+      {
+        "name": "Female_Handgun_Frame: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Handgun_Frame: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Handgun_Trigger: has geometry",
+        "ok": true,
+        "detail": "108 faces"
+      },
+      {
+        "name": "Female_Handgun_Trigger: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Handgun_Trigger: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Handgun_Magazine: has geometry",
+        "ok": true,
+        "detail": "108 faces"
+      },
+      {
+        "name": "Female_Handgun_Magazine: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Handgun_Magazine: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "handgun: attachment points",
+        "ok": true,
+        "detail": "Female_ATT_Eject,Female_ATT_Grip_R,Female_ATT_Holster,Female_ATT_Muzzle,Female_ATT_Support_L"
+      },
+      {
+        "name": "Female_MG_Body: has geometry",
+        "ok": true,
+        "detail": "11260 faces"
+      },
+      {
+        "name": "Female_MG_Body: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_MG_Body: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_MG_Handguard: has geometry",
+        "ok": true,
+        "detail": "1380 faces"
+      },
+      {
+        "name": "Female_MG_Handguard: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_MG_Handguard: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_MG_FlashHider: has geometry",
+        "ok": true,
+        "detail": "413 faces"
+      },
+      {
+        "name": "Female_MG_FlashHider: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_MG_FlashHider: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_MG_Bolt: has geometry",
+        "ok": true,
+        "detail": "60 faces"
+      },
+      {
+        "name": "Female_MG_Bolt: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_MG_Bolt: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_MG_ChargingHandle: has geometry",
+        "ok": true,
+        "detail": "162 faces"
+      },
+      {
+        "name": "Female_MG_ChargingHandle: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_MG_ChargingHandle: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_MG_Magazine: has geometry",
+        "ok": true,
+        "detail": "870 faces"
+      },
+      {
+        "name": "Female_MG_Magazine: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_MG_Magazine: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_MG_Sight: has geometry",
+        "ok": true,
+        "detail": "2298 faces"
+      },
+      {
+        "name": "Female_MG_Sight: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_MG_Sight: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_MG_RearSight: has geometry",
+        "ok": true,
+        "detail": "162 faces"
+      },
+      {
+        "name": "Female_MG_RearSight: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_MG_RearSight: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "machinegun: attachment points",
+        "ok": true,
+        "detail": "Female_ATT_Eject.001,Female_ATT_Grip_R.001,Female_ATT_Muzzle.001,Female_ATT_Sight,Female_ATT_Sling_Rear,Female_ATT_Stock,Female_ATT_Support_L.001"
+      },
+      {
+        "name": "Female_Kukri_Blade: has geometry",
+        "ok": true,
+        "detail": "1476 faces"
+      },
+      {
+        "name": "Female_Kukri_Blade: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Kukri_Blade: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Kukri_Handle: has geometry",
+        "ok": true,
+        "detail": "1402 faces"
+      },
+      {
+        "name": "Female_Kukri_Handle: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Kukri_Handle: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Kukri_Sheath: has geometry",
+        "ok": true,
+        "detail": "1654 faces"
+      },
+      {
+        "name": "Female_Kukri_Sheath: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Kukri_Sheath: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Kukri_Karda: has geometry",
+        "ok": true,
+        "detail": "246 faces"
+      },
+      {
+        "name": "Female_Kukri_Karda: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Kukri_Karda: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Kukri_Chakmak: has geometry",
+        "ok": true,
+        "detail": "246 faces"
+      },
+      {
+        "name": "Female_Kukri_Chakmak: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Female_Kukri_Chakmak: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "kukri: attachment points",
+        "ok": true,
+        "detail": "Female_ATT_Belt_Frog,Female_ATT_Grip_R.002,Female_ATT_Sheath,Female_ATT_Tip"
+      },
+      {
+        "name": "Handgun_Slide: has geometry",
+        "ok": true,
+        "detail": "1370 faces"
+      },
+      {
+        "name": "Handgun_Slide: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Handgun_Slide: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Handgun_Frame: has geometry",
+        "ok": true,
+        "detail": "1902 faces"
+      },
+      {
+        "name": "Handgun_Frame: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Handgun_Frame: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Handgun_Trigger: has geometry",
+        "ok": true,
+        "detail": "108 faces"
+      },
+      {
+        "name": "Handgun_Trigger: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Handgun_Trigger: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Handgun_Magazine: has geometry",
+        "ok": true,
+        "detail": "108 faces"
+      },
+      {
+        "name": "Handgun_Magazine: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Handgun_Magazine: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "handgun: attachment points",
+        "ok": true,
+        "detail": "ATT_Eject,ATT_Grip_R,ATT_Holster,ATT_Muzzle,ATT_Support_L"
+      },
+      {
+        "name": "MG_Body: has geometry",
+        "ok": true,
+        "detail": "11260 faces"
+      },
+      {
+        "name": "MG_Body: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "MG_Body: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "MG_Handguard: has geometry",
+        "ok": true,
+        "detail": "1380 faces"
+      },
+      {
+        "name": "MG_Handguard: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "MG_Handguard: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "MG_FlashHider: has geometry",
+        "ok": true,
+        "detail": "413 faces"
+      },
+      {
+        "name": "MG_FlashHider: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "MG_FlashHider: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "MG_Bolt: has geometry",
+        "ok": true,
+        "detail": "60 faces"
+      },
+      {
+        "name": "MG_Bolt: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "MG_Bolt: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "MG_ChargingHandle: has geometry",
+        "ok": true,
+        "detail": "162 faces"
+      },
+      {
+        "name": "MG_ChargingHandle: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "MG_ChargingHandle: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "MG_Magazine: has geometry",
+        "ok": true,
+        "detail": "870 faces"
+      },
+      {
+        "name": "MG_Magazine: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "MG_Magazine: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "MG_Sight: has geometry",
+        "ok": true,
+        "detail": "2298 faces"
+      },
+      {
+        "name": "MG_Sight: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "MG_Sight: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "MG_RearSight: has geometry",
+        "ok": true,
+        "detail": "162 faces"
+      },
+      {
+        "name": "MG_RearSight: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "MG_RearSight: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "machinegun: attachment points",
+        "ok": true,
+        "detail": "ATT_Eject.001,ATT_Grip_R.001,ATT_Muzzle.001,ATT_Sight,ATT_Sling_Rear,ATT_Stock,ATT_Support_L.001"
+      },
+      {
+        "name": "Kukri_Blade: has geometry",
+        "ok": true,
+        "detail": "1476 faces"
+      },
+      {
+        "name": "Kukri_Blade: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Kukri_Blade: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Kukri_Handle: has geometry",
+        "ok": true,
+        "detail": "1402 faces"
+      },
+      {
+        "name": "Kukri_Handle: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Kukri_Handle: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Kukri_Sheath: has geometry",
+        "ok": true,
+        "detail": "1654 faces"
+      },
+      {
+        "name": "Kukri_Sheath: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Kukri_Sheath: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Kukri_Karda: has geometry",
+        "ok": true,
+        "detail": "246 faces"
+      },
+      {
+        "name": "Kukri_Karda: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Kukri_Karda: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Kukri_Chakmak: has geometry",
+        "ok": true,
+        "detail": "246 faces"
+      },
+      {
+        "name": "Kukri_Chakmak: UV map",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "Kukri_Chakmak: materials",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "kukri: attachment points",
+        "ok": true,
+        "detail": "ATT_Belt_Frog,ATT_Grip_R.002,ATT_Sheath,ATT_Tip"
+      },
+      {
+        "name": "export exists: survival_horror_assets.blend",
+        "ok": true,
+        "detail": "6.34 MB"
+      },
+      {
+        "name": "export exists: weapon_handgun.glb",
+        "ok": true,
+        "detail": "2.92 MB"
+      },
+      {
+        "name": "export exists: weapon_machinegun.glb",
+        "ok": true,
+        "detail": "7.79 MB"
+      },
+      {
+        "name": "export exists: weapon_kukri.glb",
+        "ok": true,
+        "detail": "3.45 MB"
+      },
+      {
+        "name": "export exists: character_male.glb",
+        "ok": true,
+        "detail": "24.12 MB"
+      },
+      {
+        "name": "export exists: character_female.glb",
+        "ok": true,
+        "detail": "22.64 MB"
+      },
+      {
+        "name": "export exists: survival_horror_scene.glb",
+        "ok": true,
+        "detail": "88.70 MB"
+      },
+      {
+        "name": "glb re-import: weapon_handgun.glb",
+        "ok": true,
+        "detail": "{\"meshes\": 4, \"armatures\": 0, \"skinned_meshes\": 0, \"actions\": 3, \"images\": 24, \"shape_keys\": 0}"
+      },
+      {
+        "name": "glb re-import: weapon_machinegun.glb",
+        "ok": true,
+        "detail": "{\"meshes\": 8, \"armatures\": 0, \"skinned_meshes\": 0, \"actions\": 3, \"images\": 51, \"shape_keys\": 0}"
+      },
+      {
+        "name": "glb re-import: weapon_kukri.glb",
+        "ok": true,
+        "detail": "{\"meshes\": 5, \"armatures\": 0, \"skinned_meshes\": 0, \"actions\": 0, \"images\": 48, \"shape_keys\": 0}"
+      },
+      {
+        "name": "glb re-import: character_male.glb",
+        "ok": true,
+        "detail": "{\"meshes\": 14, \"armatures\": 1, \"skinned_meshes\": 13, \"actions\": 12, \"images\": 102, \"shape_keys\": 1}"
+      },
+      {
+        "name": "glb re-import: character_female.glb",
+        "ok": true,
+        "detail": "{\"meshes\": 14, \"armatures\": 1, \"skinned_meshes\": 13, \"actions\": 12, \"images\": 105, \"shape_keys\": 1}"
+      },
+      {
+        "name": "glb re-import: survival_horror_scene.glb",
+        "ok": true,
+        "detail": "{\"meshes\": 79, \"armatures\": 2, \"skinned_meshes\": 26, \"actions\": 30, \"images\": 576, \"shape_keys\": 2}"
+      }
+    ]
+  }
+}
