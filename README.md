@@ -52,7 +52,10 @@ When the ship's commander, Captain Elias Ward, is killed in an attack by an anci
 6. **Procedural Sci-Fi Synthesizer (Zero Missing Audio Assets)**:
    - Uses `numpy` and `pygame.mixer` to generate rich sci-fi sounds directly in code: engine hums, alarms, radio bursts, keypad beeps, alien harmonic chords, drone sirens, electrical sparks, footsteps, and character voice blips for Clara, Ward, NOVA, Malik, Sera, and The Watcher.
 
-7. **Persistence & Save System**:
+7. **Space Lobby Hub (Doors, Locks & Missions)**:
+   - A walkable corridor hub with animated sliding blast doors and five lock types (free, keycard, keypad code, power-gated, containment lockdown). See [Space Lobby](#space-lobby) below.
+
+8. **Persistence & Save System**:
    - Versioned JSON saves storing chapter progress, player coordinates, inventory, discovered audio logs, story flags, and completed objectives.
    - Autosaves at every chapter deployment, plus manual saving and loading via the Pause menu.
 
@@ -84,6 +87,12 @@ or
 python run_game.py
 ```
 
+Jump straight into the space lobby:
+```bash
+python main.py --lobby
+```
+(or choose **SPACE LOBBY** in the main menu).
+
 ### Headless Mode (For Automated CI/Testing)
 ```bash
 python main.py --headless
@@ -106,6 +115,59 @@ python main.py --headless
 | **ESC** | Pause Mission / Release Mouse Cursor |
 
 ---
+
+## Space Lobby
+
+A central transit corridor with eight doors. It is a self-contained mission chain that
+ends by launching into Chapter 1. Textures are procedural, modelled on the concept art
+(orange "Level 07" corridor, blue-silver viewport corridor, white SPACE-CORPS tube,
+hazard-stripe blast door, dark armoured door).
+
+```
+       0         1         2
+       0123456789012345678901234567
+  y0   #########T###############ZZ#     T = Mission Board
+  y1   #...#.........#.......#....#
+  y2   #...#.........#.......#....#     north rooms: Supply Locker, Mission Control,
+  y3   ##D###Z##D####Z####D###DZ###                  Engineering Annex, Observation Lounge
+  y4   #..........................#
+  y5   #..........................D     east end: Launch Airlock
+  y6   #..........................#
+  y7   ##D###T##D####Z####D########     T = Auxiliary Power Node
+  y8   #...#.........#.........####     south rooms: Crew Quarters, Airlock Bay, Hangar
+  y9   #...#.........#.........####
+```
+
+### Mission chain
+
+| # | Step | Lock type used |
+|---|------|----------------|
+| 1 | Supply Locker -> take **Level-1 Keycard** | none (just a closed door) |
+| 2 | Mission Control -> accept the mission at the board, learn the annex code | **keycard** |
+| 3 | Engineering Annex -> enter the code on the keypad, take the **Power Cell** | **keypad** (3 wrong tries = 4 s lockout) |
+| 4 | Install the Power Cell at the Auxiliary Power Node (corridor) | - |
+| 5 | Airlock Bay -> take the **Level-2 Keycard** | **power-gated** (dark door until power is restored) |
+| 6 | Hangar Gate -> take the **Mission Data Chip** | **keycard** |
+| 7 | Taking the chip triggers a **12 s containment lockdown**: every door seals | **lockdown** |
+| 8 | Lockdown lifts, the Launch Airlock comes online -> launch to Chapter 1 | **flag** |
+
+Doors never close on the player: a door holds open while you stand in the doorway, and a
+lockdown waits for you to step clear before sealing. Doors you unlocked stay unlocked after
+saving and loading, and pickups you took do not respawn.
+
+### How the door states look
+- **Red lamps / dark panel**: locked (keycard or keypad / no power)
+- **Yellow-black hazard stripes with teal windows**: unlocked, closed
+- The door leaf slides up into the ceiling as it opens, with a pneumatic hiss.
+
+### Adding your own doors and missions
+- **Layout, doors, pickups**: `src/lobby_layout.py` (`build_grid`, `build_doors`, `SPRITES`).
+- **Rules** (what each door/terminal/pickup does): `src/lobby_logic.py`.
+- **Door state machine and lockdown**: `src/door_system.py`
+  (`Door(id, cell, label, lock_type, requires=..., code=...)`).
+- **Objectives and journal text**: `assets/data/chapters.json` (chapter `"7"`) and `assets/data/lore_logs.json`.
+- The first three files import no pygame, so they are unit-tested without a display
+  (`tests/test_lobby_logic.py`). The pygame glue is `src/lobby.py`.
 
 ## Automated Test Suite
 
@@ -139,8 +201,12 @@ python tests/run_all_tests.py
 │   ├── cinematics.py              # Opening cutscenes, chapter deployment & ending screens
 │   ├── config.py                  # Colors, resolution, FOV & physics constants
 │   ├── dialogue_system.py         # Subtitles, typewriter effect & voice blips
+│   ├── door_system.py             # Door state machine, lock types & containment lockdown (pure Python)
 │   ├── engine.py                  # Master GameEngine state machine
 │   ├── levels.py                  # Deck map grids, entities & interactive triggers
+│   ├── lobby.py                   # Space lobby pygame glue: level build, keypad UI, lockdown overlay
+│   ├── lobby_layout.py            # Space lobby map, doors, pickups & wall styles (pure Python)
+│   ├── lobby_logic.py             # Space lobby mission rules & prompts (pure Python)
 │   ├── player.py                  # Clara Voss controller, health, flashlight & inventory
 │   ├── puzzles.py                 # All 7 interactive sci-fi puzzle interfaces
 │   ├── quest_system.py            # Objective tracker, story flags & chapter gating
@@ -153,6 +219,7 @@ python tests/run_all_tests.py
 ├── tests/
 │   ├── run_all_tests.py           # Unified test runner
 │   ├── test_endings.py            # Ending verification & prerequisite tests
+│   ├── test_lobby_logic.py        # Lobby doors, locks, layout & full mission playthrough (no pygame needed)
 │   ├── test_puzzles.py            # Unit tests for all 7 puzzles
 │   ├── test_quests.py             # Quest progression & level loading tests
 │   └── test_save_load.py          # Save & load round-trip persistence tests
