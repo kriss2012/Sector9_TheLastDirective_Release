@@ -160,5 +160,23 @@
     "chapter": 6,
     "category": "Command Archive",
     "content": "AUTHENTICATED CIPHER CODE: [CHRONO-VE-994-OMEGA]\nGrants direct operational command authority at the central Continuum Engine interface."
+  },
+  "lobby_briefing": {
+      "title": "Mission Briefing: Operation Hangar Run",
+      "chapter": 7,
+      "category": "Mission Briefing",
+      "content": "MISSION ACCEPTED. Objective: retrieve the Mission Data Chip from the Hangar and launch. Engineering Annex override code: 7319. The annex holds a Power Cell - install it at the Auxiliary Power Node in the main corridor to restore power to the Airlock Bay. The Level-2 Keycard is in the Airlock Bay. WARNING: lifting the chip from the Hangar triggers a containment lockdown. Hold position until the bulkheads release."
+  },
+  "lobby_crew_log": {
+      "title": "Crew Quarters Log - Tech Okafor",
+      "chapter": 7,
+      "category": "Crew Log",
+      "content": "Day 212. They keep telling us the lockdown drills are routine, but the Hangar chip cradle was never wired into the drill circuit. If somebody lifts that chip, every door on the deck seals for about twelve seconds. Do not panic. Do not stand in a doorway. The doors will not crush you, but they will wait for you to move."
+  },
+  "lobby_obs_log": {
+      "title": "Observation Lounge Log - Lt. Adeyemi",
+      "chapter": 7,
+      "category": "Crew Log",
+      "content": "I come here when the corridor lights get too bright. Out the window the stars look the same as they always did. The Supply Locker keycard opens Mission Control. The second keycard needs the auxiliary grid back online, so find a Power Cell before you go looking for it."
   }
 }
